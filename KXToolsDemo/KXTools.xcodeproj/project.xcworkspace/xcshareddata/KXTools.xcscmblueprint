@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1BC574FBA1275BA70CF8A01960C540FB303BE655",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "8fb29d72-f352-44e4-b356-548a4d6ac5c3++6670" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8fb29d72-f352-44e4-b356-548a4d6ac5c3++6670" : 0,
+    "1BC574FBA1275BA70CF8A01960C540FB303BE655" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "394A0D33-2746-4776-8DC6-42BBE8AAAD7E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8fb29d72-f352-44e4-b356-548a4d6ac5c3++6670" : "KXTools\/KXToolsDemo\/KXTools\/Tools\/Security\/",
+    "1BC574FBA1275BA70CF8A01960C540FB303BE655" : "KXTools\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KXTools",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "KXToolsDemo\/KXTools.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/Mr_kit\/KXTools.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1BC574FBA1275BA70CF8A01960C540FB303BE655"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/10.20.0.15\/project\/cn\/ChiefSign",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8fb29d72-f352-44e4-b356-548a4d6ac5c3++6670"
+    }
+  ]
+}
