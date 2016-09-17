@@ -40,7 +40,7 @@
 - (CGRect)getFrameWithLoaction:(KXCopyViewLoaction)location andFrame:(CGRect)frame {
     CGRect selfFrame = CGRectZero;
     CGFloat selfHight = 40;
-    CGFloat selfWidth = 100;
+    CGFloat selfWidth = 50;
     switch (location) {
         case KXCopyViewLoaction_up: {
             selfFrame = CGRectMake((frame.origin.x + frame.size.width * 0.5) - selfWidth * 0.5, frame.origin.y - selfHight, selfWidth, selfHight);
@@ -60,7 +60,8 @@
 - (void)setImage:(UIImage *)image andInsets:(UIEdgeInsets)insets {
     
     _BJImageView = [[UIImageView alloc] init];
-    _BJImageView.image = [image resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+    _BJImageView.image = [image stretchableImageWithLeftCapWidth:image.size.width*0.8 topCapHeight:image.size.height*0.5];
+    //    _BJImageView.image = [image resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
     _BJImageView.userInteractionEnabled = YES;
     [self addSubview:_BJImageView];
 }
@@ -104,15 +105,21 @@
 }
 
 - (void)layoutSubviews {
-    _BJImageView.frame = self.bounds;
     
-    CGFloat labelWidth = CGRectGetWidth(self.frame) / self.buttonArray.count;
+    
+    CGFloat labelWidth = 50;
     CGFloat labelHeight = CGRectGetHeight(self.frame) - 10;
     for (NSInteger index = 0; index < self.buttonArray.count; index++) {
         UIButton *button = self.buttonArray[index];
         button.frame = CGRectMake(labelWidth * index, 0, labelWidth, labelHeight);
         [self bringSubviewToFront:button];
+        
+        if (CGRectGetMaxX(button.frame) > CGRectGetWidth(self.frame)) {
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, CGRectGetMaxX(button.frame), self.frame.size.height);
+        }
     }
+    
+    _BJImageView.frame = self.bounds;
 }
 
 #pragma mark - lazyLoad
