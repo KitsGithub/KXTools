@@ -10,6 +10,8 @@
 #import "UIButton+iconWithTitle.h"
 #import "KXCodingManager.h"
 
+#import "KXCopyView.h"
+
 @interface ViewController ()
 
 @end
@@ -36,6 +38,12 @@
     [button2 addTarget:self action:@selector(buttonStatusChange:) forControlEvents:UIControlEventTouchUpInside];
     
     
+    KXCopyView *copyView = [[KXCopyView alloc] initWithControler:button andLocation:KXCopyViewLoaction_up];
+    copyView.titleArray = @[@"复制",@"粘贴"];
+    [copyView setImage:[UIImage imageNamed:@"Discovre_Copy"] andInsets:UIEdgeInsetsMake(30, 40, 30, 40)];
+    
+    [self.view addSubview:copyView];
+    [copyView showAnimation];
     
     
     KXCodingManager *manager = [[KXCodingManager alloc] initWithSequreKey:@"yihezhai16816888"];

@@ -11,17 +11,18 @@
 		049169CE1D87EC8F0047E739 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 049169C81D87EC8F0047E739 /* NSData+AES.m */; };
 		049169CF1D87EC8F0047E739 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 049169CA1D87EC8F0047E739 /* NSString+MD5.m */; };
 		049169D01D87EC8F0047E739 /* KXCodingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 049169CC1D87EC8F0047E739 /* KXCodingManager.m */; };
+		04EA790F1D8D3AFD005E5425 /* KXCopyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA79041D8D3AFD005E5425 /* KXCopyView.m */; };
+		04EA79101D8D3AFD005E5425 /* NSString+FontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA79061D8D3AFD005E5425 /* NSString+FontSize.m */; };
+		04EA79111D8D3AFD005E5425 /* NSString+urlCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA79081D8D3AFD005E5425 /* NSString+urlCoding.m */; };
+		04EA79121D8D3AFD005E5425 /* UIButton+iconWithTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA790A1D8D3AFD005E5425 /* UIButton+iconWithTitle.m */; };
+		04EA79131D8D3AFD005E5425 /* UILabel+kxPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA790C1D8D3AFD005E5425 /* UILabel+kxPrice.m */; };
+		04EA79141D8D3AFD005E5425 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA790E1D8D3AFD005E5425 /* UINavigationBar+Awesome.m */; };
 		473059021CC9B97600BA2E02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 473059011CC9B97600BA2E02 /* main.m */; };
 		473059051CC9B97600BA2E02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 473059041CC9B97600BA2E02 /* AppDelegate.m */; };
 		473059081CC9B97600BA2E02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473059071CC9B97600BA2E02 /* ViewController.m */; };
 		4730590B1CC9B97600BA2E02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473059091CC9B97600BA2E02 /* Main.storyboard */; };
 		4730590D1CC9B97600BA2E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4730590C1CC9B97600BA2E02 /* Assets.xcassets */; };
 		473059101CC9B97600BA2E02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4730590E1CC9B97600BA2E02 /* LaunchScreen.storyboard */; };
-		473059231CC9BAB300BA2E02 /* NSString+urlCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4730591B1CC9BAB300BA2E02 /* NSString+urlCoding.m */; };
-		473059241CC9BAB300BA2E02 /* UIButton+iconWithTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4730591D1CC9BAB300BA2E02 /* UIButton+iconWithTitle.m */; };
-		473059261CC9BAB300BA2E02 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 473059211CC9BAB300BA2E02 /* UINavigationBar+Awesome.m */; };
-		4730592D1CC9C29200BA2E02 /* UILabel+kxPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4730592C1CC9C29200BA2E02 /* UILabel+kxPrice.m */; };
-		473059311CC9C33500BA2E02 /* NSString+FontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 473059301CC9C33500BA2E02 /* NSString+FontSize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,18 @@
 		049169CA1D87EC8F0047E739 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		049169CB1D87EC8F0047E739 /* KXCodingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXCodingManager.h; sourceTree = "<group>"; };
 		049169CC1D87EC8F0047E739 /* KXCodingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXCodingManager.m; sourceTree = "<group>"; };
+		04EA79031D8D3AFD005E5425 /* KXCopyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXCopyView.h; sourceTree = "<group>"; };
+		04EA79041D8D3AFD005E5425 /* KXCopyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXCopyView.m; sourceTree = "<group>"; };
+		04EA79051D8D3AFD005E5425 /* NSString+FontSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontSize.h"; sourceTree = "<group>"; };
+		04EA79061D8D3AFD005E5425 /* NSString+FontSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontSize.m"; sourceTree = "<group>"; };
+		04EA79071D8D3AFD005E5425 /* NSString+urlCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+urlCoding.h"; sourceTree = "<group>"; };
+		04EA79081D8D3AFD005E5425 /* NSString+urlCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+urlCoding.m"; sourceTree = "<group>"; };
+		04EA79091D8D3AFD005E5425 /* UIButton+iconWithTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+iconWithTitle.h"; sourceTree = "<group>"; };
+		04EA790A1D8D3AFD005E5425 /* UIButton+iconWithTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+iconWithTitle.m"; sourceTree = "<group>"; };
+		04EA790B1D8D3AFD005E5425 /* UILabel+kxPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+kxPrice.h"; sourceTree = "<group>"; };
+		04EA790C1D8D3AFD005E5425 /* UILabel+kxPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+kxPrice.m"; sourceTree = "<group>"; };
+		04EA790D1D8D3AFD005E5425 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		04EA790E1D8D3AFD005E5425 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		473058FD1CC9B97600BA2E02 /* KXTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KXTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473059011CC9B97600BA2E02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		473059031CC9B97600BA2E02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,16 +57,6 @@
 		4730590C1CC9B97600BA2E02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4730590F1CC9B97600BA2E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		473059111CC9B97600BA2E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4730591A1CC9BAB300BA2E02 /* NSString+urlCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+urlCoding.h"; sourceTree = "<group>"; };
-		4730591B1CC9BAB300BA2E02 /* NSString+urlCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+urlCoding.m"; sourceTree = "<group>"; };
-		4730591C1CC9BAB300BA2E02 /* UIButton+iconWithTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+iconWithTitle.h"; sourceTree = "<group>"; };
-		4730591D1CC9BAB300BA2E02 /* UIButton+iconWithTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+iconWithTitle.m"; sourceTree = "<group>"; };
-		473059201CC9BAB300BA2E02 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
-		473059211CC9BAB300BA2E02 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
-		4730592B1CC9C29200BA2E02 /* UILabel+kxPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+kxPrice.h"; sourceTree = "<group>"; };
-		4730592C1CC9C29200BA2E02 /* UILabel+kxPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+kxPrice.m"; sourceTree = "<group>"; };
-		4730592F1CC9C33500BA2E02 /* NSString+FontSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontSize.h"; sourceTree = "<group>"; };
-		473059301CC9C33500BA2E02 /* NSString+FontSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontSize.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,25 @@
 				049169C61D87EC8F0047E739 /* GTMDefines.h */,
 			);
 			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		04EA79021D8D3AFD005E5425 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				04EA79031D8D3AFD005E5425 /* KXCopyView.h */,
+				04EA79041D8D3AFD005E5425 /* KXCopyView.m */,
+				04EA79051D8D3AFD005E5425 /* NSString+FontSize.h */,
+				04EA79061D8D3AFD005E5425 /* NSString+FontSize.m */,
+				04EA79071D8D3AFD005E5425 /* NSString+urlCoding.h */,
+				04EA79081D8D3AFD005E5425 /* NSString+urlCoding.m */,
+				04EA79091D8D3AFD005E5425 /* UIButton+iconWithTitle.h */,
+				04EA790A1D8D3AFD005E5425 /* UIButton+iconWithTitle.m */,
+				04EA790B1D8D3AFD005E5425 /* UILabel+kxPrice.h */,
+				04EA790C1D8D3AFD005E5425 /* UILabel+kxPrice.m */,
+				04EA790D1D8D3AFD005E5425 /* UINavigationBar+Awesome.h */,
+				04EA790E1D8D3AFD005E5425 /* UINavigationBar+Awesome.m */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 		473058F41CC9B97600BA2E02 = {
@@ -144,17 +166,8 @@
 		473059171CC9BAB300BA2E02 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				04EA79021D8D3AFD005E5425 /* Lib */,
 				049169C11D87EC8F0047E739 /* Security */,
-				4730591A1CC9BAB300BA2E02 /* NSString+urlCoding.h */,
-				4730591B1CC9BAB300BA2E02 /* NSString+urlCoding.m */,
-				4730591C1CC9BAB300BA2E02 /* UIButton+iconWithTitle.h */,
-				4730591D1CC9BAB300BA2E02 /* UIButton+iconWithTitle.m */,
-				4730592B1CC9C29200BA2E02 /* UILabel+kxPrice.h */,
-				4730592C1CC9C29200BA2E02 /* UILabel+kxPrice.m */,
-				473059201CC9BAB300BA2E02 /* UINavigationBar+Awesome.h */,
-				473059211CC9BAB300BA2E02 /* UINavigationBar+Awesome.m */,
-				4730592F1CC9C33500BA2E02 /* NSString+FontSize.h */,
-				473059301CC9C33500BA2E02 /* NSString+FontSize.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -236,18 +249,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EA79141D8D3AFD005E5425 /* UINavigationBar+Awesome.m in Sources */,
+				04EA790F1D8D3AFD005E5425 /* KXCopyView.m in Sources */,
 				049169CE1D87EC8F0047E739 /* NSData+AES.m in Sources */,
-				473059231CC9BAB300BA2E02 /* NSString+urlCoding.m in Sources */,
 				473059081CC9B97600BA2E02 /* ViewController.m in Sources */,
-				473059261CC9BAB300BA2E02 /* UINavigationBar+Awesome.m in Sources */,
 				049169CF1D87EC8F0047E739 /* NSString+MD5.m in Sources */,
-				473059311CC9C33500BA2E02 /* NSString+FontSize.m in Sources */,
+				04EA79101D8D3AFD005E5425 /* NSString+FontSize.m in Sources */,
+				04EA79111D8D3AFD005E5425 /* NSString+urlCoding.m in Sources */,
 				473059051CC9B97600BA2E02 /* AppDelegate.m in Sources */,
+				04EA79121D8D3AFD005E5425 /* UIButton+iconWithTitle.m in Sources */,
 				473059021CC9B97600BA2E02 /* main.m in Sources */,
-				473059241CC9BAB300BA2E02 /* UIButton+iconWithTitle.m in Sources */,
 				049169CD1D87EC8F0047E739 /* GTMBase64.m in Sources */,
 				049169D01D87EC8F0047E739 /* KXCodingManager.m in Sources */,
-				4730592D1CC9C29200BA2E02 /* UILabel+kxPrice.m in Sources */,
+				04EA79131D8D3AFD005E5425 /* UILabel+kxPrice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

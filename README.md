@@ -27,3 +27,7 @@ navBar 的一些灵活用法
 # KXCodingManager
 
 base64、AES加密的工具类
+
+# KXCopyView
+
+仿微信的复制、粘贴按钮
