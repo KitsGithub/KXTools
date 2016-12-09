@@ -16,12 +16,19 @@ typedef enum : NSUInteger {
 } TouchIDStatus;
 
 
+@protocol KXTouchIDManagerDelegate <NSObject>
+
+
+
+@end
 
 
 @interface KXTouchIDManager : NSObject
 
 + (instancetype)shareManager;
 
+//错误回调代理
+@property (nonatomic, weak) id <KXTouchIDManagerDelegate> delegate;
 
 /**
  判断设备的touchID状态
@@ -36,8 +43,11 @@ typedef enum : NSUInteger {
 
  @param localizedFallbackTitle 标题
  @param localizedFallbackMessage 副标题
- @param touchBlock 回调
+ @param touchBlock 成功回调
  */
-- (void)callTouchIDWithlocalizedFallbackTitle:(NSString *)localizedFallbackTitle andLocalizedFallbackMessage:(NSString *)localizedFallbackMessage success:(void(^)(BOOL success,NSError *error))touchBlock;
+- (void)callTouchIDWithlocalizedFallbackTitle:(NSString *)localizedFallbackTitle andLocalizedFallbackMessage:(NSString *)localizedFallbackMessage success:(void(^)(BOOL success))touchBlock;
+
+
+
 
 @end

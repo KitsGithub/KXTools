@@ -116,7 +116,11 @@
     KXTouchIDManager *manager = [KXTouchIDManager shareManager];
     BOOL status = [manager canDeviverUseTouchIDWith:_context];
     if (status) {
-        
+        [manager callTouchIDWithlocalizedFallbackTitle:@"标题" andLocalizedFallbackMessage:@"副标题" success:^(BOOL success) {
+            
+            NSLog(@"验证成功");
+            
+        }];
     }
 }
 
