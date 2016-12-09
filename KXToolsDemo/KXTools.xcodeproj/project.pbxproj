@@ -11,6 +11,10 @@
 		049169CE1D87EC8F0047E739 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 049169C81D87EC8F0047E739 /* NSData+AES.m */; };
 		049169CF1D87EC8F0047E739 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 049169CA1D87EC8F0047E739 /* NSString+MD5.m */; };
 		049169D01D87EC8F0047E739 /* KXCodingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 049169CC1D87EC8F0047E739 /* KXCodingManager.m */; };
+		049196A21DFA9CF400208E89 /* KXKeyChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 049196A11DFA9CF400208E89 /* KXKeyChainManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		049196A51DFA9D0F00208E89 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049196A41DFA9D0F00208E89 /* Security.framework */; };
+		049196A71DFA9F0300208E89 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049196A61DFA9F0300208E89 /* LocalAuthentication.framework */; };
+		049196AA1DFA9FF400208E89 /* KXTouchIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 049196A91DFA9FF400208E89 /* KXTouchIDManager.m */; };
 		04EA790F1D8D3AFD005E5425 /* KXCopyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA79041D8D3AFD005E5425 /* KXCopyView.m */; };
 		04EA79101D8D3AFD005E5425 /* NSString+FontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA79061D8D3AFD005E5425 /* NSString+FontSize.m */; };
 		04EA79111D8D3AFD005E5425 /* NSString+urlCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA79081D8D3AFD005E5425 /* NSString+urlCoding.m */; };
@@ -35,6 +39,12 @@
 		049169CA1D87EC8F0047E739 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		049169CB1D87EC8F0047E739 /* KXCodingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXCodingManager.h; sourceTree = "<group>"; };
 		049169CC1D87EC8F0047E739 /* KXCodingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXCodingManager.m; sourceTree = "<group>"; };
+		049196A01DFA9CF400208E89 /* KXKeyChainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXKeyChainManager.h; sourceTree = "<group>"; };
+		049196A11DFA9CF400208E89 /* KXKeyChainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXKeyChainManager.m; sourceTree = "<group>"; };
+		049196A41DFA9D0F00208E89 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		049196A61DFA9F0300208E89 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		049196A81DFA9FF400208E89 /* KXTouchIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXTouchIDManager.h; sourceTree = "<group>"; };
+		049196A91DFA9FF400208E89 /* KXTouchIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXTouchIDManager.m; sourceTree = "<group>"; };
 		04EA79031D8D3AFD005E5425 /* KXCopyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXCopyView.h; sourceTree = "<group>"; };
 		04EA79041D8D3AFD005E5425 /* KXCopyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXCopyView.m; sourceTree = "<group>"; };
 		04EA79051D8D3AFD005E5425 /* NSString+FontSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontSize.h"; sourceTree = "<group>"; };
@@ -64,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049196A71DFA9F0300208E89 /* LocalAuthentication.framework in Frameworks */,
+				049196A51DFA9D0F00208E89 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +88,8 @@
 				049169C21D87EC8F0047E739 /* Categray */,
 				049169CB1D87EC8F0047E739 /* KXCodingManager.h */,
 				049169CC1D87EC8F0047E739 /* KXCodingManager.m */,
+				049196A01DFA9CF400208E89 /* KXKeyChainManager.h */,
+				049196A11DFA9CF400208E89 /* KXKeyChainManager.m */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -102,6 +116,15 @@
 			path = GTMBase64;
 			sourceTree = "<group>";
 		};
+		049196A31DFA9D0F00208E89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				049196A61DFA9F0300208E89 /* LocalAuthentication.framework */,
+				049196A41DFA9D0F00208E89 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		04EA79021D8D3AFD005E5425 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +140,8 @@
 				04EA790C1D8D3AFD005E5425 /* UILabel+kxPrice.m */,
 				04EA790D1D8D3AFD005E5425 /* UINavigationBar+Awesome.h */,
 				04EA790E1D8D3AFD005E5425 /* UINavigationBar+Awesome.m */,
+				049196A81DFA9FF400208E89 /* KXTouchIDManager.h */,
+				049196A91DFA9FF400208E89 /* KXTouchIDManager.m */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -126,6 +151,7 @@
 			children = (
 				473058FF1CC9B97600BA2E02 /* KXTools */,
 				473058FE1CC9B97600BA2E02 /* Products */,
+				049196A31DFA9D0F00208E89 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +236,7 @@
 				TargetAttributes = {
 					473058FC1CC9B97600BA2E02 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = C74GJQS7VJ;
 					};
 				};
 			};
@@ -255,6 +282,8 @@
 				473059081CC9B97600BA2E02 /* ViewController.m in Sources */,
 				049169CF1D87EC8F0047E739 /* NSString+MD5.m in Sources */,
 				04EA79101D8D3AFD005E5425 /* NSString+FontSize.m in Sources */,
+				049196AA1DFA9FF400208E89 /* KXTouchIDManager.m in Sources */,
+				049196A21DFA9CF400208E89 /* KXKeyChainManager.m in Sources */,
 				04EA79111D8D3AFD005E5425 /* NSString+urlCoding.m in Sources */,
 				473059051CC9B97600BA2E02 /* AppDelegate.m in Sources */,
 				04EA79121D8D3AFD005E5425 /* UIButton+iconWithTitle.m in Sources */,
@@ -371,7 +400,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C74GJQS7VJ;
 				INFOPLIST_FILE = KXTools/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mr-bearx.KXTools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -382,7 +413,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C74GJQS7VJ;
 				INFOPLIST_FILE = KXTools/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mr-bearx.KXTools";
 				PRODUCT_NAME = "$(TARGET_NAME)";

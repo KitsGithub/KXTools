@@ -7,16 +7,24 @@
 //
 
 #import "ViewController.h"
+#import <LocalAuthentication/LocalAuthentication.h>
+
+//自定义类
 #import "UIButton+iconWithTitle.h"
 #import "KXCodingManager.h"
-
+#import "KXKeyChainManager.h"
 #import "KXCopyView.h"
+
+//TouchID 管理类
+#import "KXTouchIDManager.h"
 
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    LAContext *_context;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,7 +76,48 @@
     KXCodingManager *manager2 = [[KXCodingManager alloc] initWithSequreKey:@"123123"];
     NSLog(@"%@",manager.SequreKey);
     NSLog(@"%@",manager2.SequreKey);
+    
+    
+    
+    //保存至 系统钥匙串中
+    [KXKeyChainManager save:@"Account" data:@"381377046@qq.com"];
+    [KXKeyChainManager save:@"Password" data:@"123123"];
+    
+    NSString *account = [KXKeyChainManager load:@"Account"];
+    NSLog(@"%@",account);
+    
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"account"] = @"381377046@qq.com";
+    params[@"Passowrd"] = @"123123";
+    [KXKeyChainManager save:@"AccountInfo" data:params];
+    
+    NSMutableDictionary *accountInfo = [KXKeyChainManager load:@"AccountInfo"];
+    NSLog(@"%@",accountInfo);
+    
+    
+    UIButton *touchID = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(button2.frame) + 30, [UIScreen mainScreen].bounds.size.width, 30)];
+    [self.view addSubview:touchID];
+    [touchID setTitle:@"点我调用touchID" forState:UIControlStateNormal];
+    [touchID setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [touchID addTarget:self action:@selector(touchIDClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
+    
+    
 
+}
+
+- (void)touchIDClick {
+    if (!_context) {
+        _context = [[LAContext alloc] init];
+    }
+    KXTouchIDManager *manager = [KXTouchIDManager shareManager];
+    BOOL status = [manager canDeviverUseTouchIDWith:_context];
+    if (status) {
+        
+    }
 }
 
 - (void)buttonStatusChange:(UIButton *)sender {
