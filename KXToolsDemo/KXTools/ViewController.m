@@ -18,6 +18,9 @@
 //TouchID 管理类
 #import "KXTouchIDManager.h"
 
+//FMDB的第三方封装
+#import "FMDBManager.h"
+
 @interface ViewController ()
 
 @end
@@ -29,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     [self.view addSubview:button];
@@ -101,6 +105,11 @@
     [touchID setTitle:@"点我调用touchID" forState:UIControlStateNormal];
     [touchID setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [touchID addTarget:self action:@selector(touchIDClick) forControlEvents:UIControlEventTouchUpInside];
+    /*
+    */
+    
+    
+    FMDBManager *manager = [FMDBManager shareManager];
     
     
     

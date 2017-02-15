@@ -5,9 +5,9 @@
 //  Created by mac on 16/9/22.
 //  Copyright © 2016年 mac. All rights reserved.
 //
-
+#import <FMDB.h>
 #import "FMDBManager.h"
-#import "SDTimeLineCellModel.h"
+//#import "SDTimeLineCellModel.h"
 #import <objc/runtime.h>
 
 
@@ -132,13 +132,30 @@
     if (pArray.count == 0) {
         return NO;
     }
-    BOOL success = [db executeUpdate:operationString, pArray[0], pArray[1], pArray[2], pArray[3], pArray[4], pArray[5], pArray[6]];
     
-    if (success) {
-        return YES;
-    } else {
-        return NO;
+    BOOL isRollBack = NO;
+    @try {
+        BOOL success = [db executeUpdate:operationString, pArray[0], pArray[1], pArray[2], pArray[3], pArray[4], pArray[5], pArray[6]];
+        if (!success) {
+            isRollBack = YES;
+        }
+        
+    } @catch (NSException *exception) {
+        if (isRollBack) {
+            isRollBack = NO;
+            [db rollback];
+        }
+        
+    } @finally {
+        if (isRollBack) {
+            [db rollback];
+        }
+        
     }
+    
+    
+    
+    
     
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0401E1FE1E53F5CB00D2A4CD /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E1FD1E53F5CB00D2A4CD /* FMDBManager.m */; };
 		049169CD1D87EC8F0047E739 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 049169C51D87EC8F0047E739 /* GTMBase64.m */; };
 		049169CE1D87EC8F0047E739 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 049169C81D87EC8F0047E739 /* NSData+AES.m */; };
 		049169CF1D87EC8F0047E739 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 049169CA1D87EC8F0047E739 /* NSString+MD5.m */; };
@@ -16,7 +17,6 @@
 		049196A71DFA9F0300208E89 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049196A61DFA9F0300208E89 /* LocalAuthentication.framework */; };
 		049196AA1DFA9FF400208E89 /* KXTouchIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 049196A91DFA9FF400208E89 /* KXTouchIDManager.m */; };
 		04EA790F1D8D3AFD005E5425 /* KXCopyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA79041D8D3AFD005E5425 /* KXCopyView.m */; };
-		04EA79101D8D3AFD005E5425 /* NSString+FontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA79061D8D3AFD005E5425 /* NSString+FontSize.m */; };
 		04EA79111D8D3AFD005E5425 /* NSString+urlCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA79081D8D3AFD005E5425 /* NSString+urlCoding.m */; };
 		04EA79121D8D3AFD005E5425 /* UIButton+iconWithTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA790A1D8D3AFD005E5425 /* UIButton+iconWithTitle.m */; };
 		04EA79131D8D3AFD005E5425 /* UILabel+kxPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA790C1D8D3AFD005E5425 /* UILabel+kxPrice.m */; };
@@ -27,9 +27,12 @@
 		4730590B1CC9B97600BA2E02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473059091CC9B97600BA2E02 /* Main.storyboard */; };
 		4730590D1CC9B97600BA2E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4730590C1CC9B97600BA2E02 /* Assets.xcassets */; };
 		473059101CC9B97600BA2E02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4730590E1CC9B97600BA2E02 /* LaunchScreen.storyboard */; };
+		C772DC2B482D88EBF0C606E5 /* libPods-KXTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9602395FC1826AB846507F9E /* libPods-KXTools.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0401E1FC1E53F5CB00D2A4CD /* FMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
+		0401E1FD1E53F5CB00D2A4CD /* FMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
 		049169C41D87EC8F0047E739 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		049169C51D87EC8F0047E739 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		049169C61D87EC8F0047E739 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -47,8 +50,6 @@
 		049196A91DFA9FF400208E89 /* KXTouchIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXTouchIDManager.m; sourceTree = "<group>"; };
 		04EA79031D8D3AFD005E5425 /* KXCopyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXCopyView.h; sourceTree = "<group>"; };
 		04EA79041D8D3AFD005E5425 /* KXCopyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXCopyView.m; sourceTree = "<group>"; };
-		04EA79051D8D3AFD005E5425 /* NSString+FontSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontSize.h"; sourceTree = "<group>"; };
-		04EA79061D8D3AFD005E5425 /* NSString+FontSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontSize.m"; sourceTree = "<group>"; };
 		04EA79071D8D3AFD005E5425 /* NSString+urlCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+urlCoding.h"; sourceTree = "<group>"; };
 		04EA79081D8D3AFD005E5425 /* NSString+urlCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+urlCoding.m"; sourceTree = "<group>"; };
 		04EA79091D8D3AFD005E5425 /* UIButton+iconWithTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+iconWithTitle.h"; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		04EA790C1D8D3AFD005E5425 /* UILabel+kxPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+kxPrice.m"; sourceTree = "<group>"; };
 		04EA790D1D8D3AFD005E5425 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		04EA790E1D8D3AFD005E5425 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
+		157B73693756C2C4D1D87BBB /* Pods-KXTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KXTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KXTools/Pods-KXTools.debug.xcconfig"; sourceTree = "<group>"; };
 		473058FD1CC9B97600BA2E02 /* KXTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KXTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		473059011CC9B97600BA2E02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		473059031CC9B97600BA2E02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +69,8 @@
 		4730590C1CC9B97600BA2E02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4730590F1CC9B97600BA2E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		473059111CC9B97600BA2E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F25A7D14C27CE6E4966FA65 /* Pods-KXTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KXTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-KXTools/Pods-KXTools.release.xcconfig"; sourceTree = "<group>"; };
+		9602395FC1826AB846507F9E /* libPods-KXTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KXTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +80,20 @@
 			files = (
 				049196A71DFA9F0300208E89 /* LocalAuthentication.framework in Frameworks */,
 				049196A51DFA9D0F00208E89 /* Security.framework in Frameworks */,
+				C772DC2B482D88EBF0C606E5 /* libPods-KXTools.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0401E1FF1E53F86E00D2A4CD /* DemoModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DemoModel;
+			sourceTree = "<group>";
+		};
 		049169C11D87EC8F0047E739 /* Security */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +133,7 @@
 			children = (
 				049196A61DFA9F0300208E89 /* LocalAuthentication.framework */,
 				049196A41DFA9D0F00208E89 /* Security.framework */,
+				9602395FC1826AB846507F9E /* libPods-KXTools.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,10 +141,10 @@
 		04EA79021D8D3AFD005E5425 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				0401E1FC1E53F5CB00D2A4CD /* FMDBManager.h */,
+				0401E1FD1E53F5CB00D2A4CD /* FMDBManager.m */,
 				04EA79031D8D3AFD005E5425 /* KXCopyView.h */,
 				04EA79041D8D3AFD005E5425 /* KXCopyView.m */,
-				04EA79051D8D3AFD005E5425 /* NSString+FontSize.h */,
-				04EA79061D8D3AFD005E5425 /* NSString+FontSize.m */,
 				04EA79071D8D3AFD005E5425 /* NSString+urlCoding.h */,
 				04EA79081D8D3AFD005E5425 /* NSString+urlCoding.m */,
 				04EA79091D8D3AFD005E5425 /* UIButton+iconWithTitle.h */,
@@ -146,12 +159,22 @@
 			path = Lib;
 			sourceTree = "<group>";
 		};
+		42F05F08D9E491E679544841 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				157B73693756C2C4D1D87BBB /* Pods-KXTools.debug.xcconfig */,
+				8F25A7D14C27CE6E4966FA65 /* Pods-KXTools.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		473058F41CC9B97600BA2E02 = {
 			isa = PBXGroup;
 			children = (
 				473058FF1CC9B97600BA2E02 /* KXTools */,
 				473058FE1CC9B97600BA2E02 /* Products */,
 				049196A31DFA9D0F00208E89 /* Frameworks */,
+				42F05F08D9E491E679544841 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +189,7 @@
 		473058FF1CC9B97600BA2E02 /* KXTools */ = {
 			isa = PBXGroup;
 			children = (
+				0401E1FF1E53F86E00D2A4CD /* DemoModel */,
 				473059271CC9BAC600BA2E02 /* categray */,
 				473059171CC9BAB300BA2E02 /* Tools */,
 				473059031CC9B97600BA2E02 /* AppDelegate.h */,
@@ -212,9 +236,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 473059141CC9B97600BA2E02 /* Build configuration list for PBXNativeTarget "KXTools" */;
 			buildPhases = (
+				8784DA0CD79209232502E494 /* [CP] Check Pods Manifest.lock */,
 				473058F91CC9B97600BA2E02 /* Sources */,
 				473058FA1CC9B97600BA2E02 /* Frameworks */,
 				473058FB1CC9B97600BA2E02 /* Resources */,
+				06784120C3AC3E8CB9D45393 /* [CP] Embed Pods Frameworks */,
+				5B30331B3E40D29E99AD72B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,6 +298,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06784120C3AC3E8CB9D45393 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KXTools/Pods-KXTools-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B30331B3E40D29E99AD72B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KXTools/Pods-KXTools-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8784DA0CD79209232502E494 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		473058F91CC9B97600BA2E02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -281,13 +356,13 @@
 				049169CE1D87EC8F0047E739 /* NSData+AES.m in Sources */,
 				473059081CC9B97600BA2E02 /* ViewController.m in Sources */,
 				049169CF1D87EC8F0047E739 /* NSString+MD5.m in Sources */,
-				04EA79101D8D3AFD005E5425 /* NSString+FontSize.m in Sources */,
 				049196AA1DFA9FF400208E89 /* KXTouchIDManager.m in Sources */,
 				049196A21DFA9CF400208E89 /* KXKeyChainManager.m in Sources */,
 				04EA79111D8D3AFD005E5425 /* NSString+urlCoding.m in Sources */,
 				473059051CC9B97600BA2E02 /* AppDelegate.m in Sources */,
 				04EA79121D8D3AFD005E5425 /* UIButton+iconWithTitle.m in Sources */,
 				473059021CC9B97600BA2E02 /* main.m in Sources */,
+				0401E1FE1E53F5CB00D2A4CD /* FMDBManager.m in Sources */,
 				049169CD1D87EC8F0047E739 /* GTMBase64.m in Sources */,
 				049169D01D87EC8F0047E739 /* KXCodingManager.m in Sources */,
 				04EA79131D8D3AFD005E5425 /* UILabel+kxPrice.m in Sources */,
@@ -398,6 +473,7 @@
 		};
 		473059151CC9B97600BA2E02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 157B73693756C2C4D1D87BBB /* Pods-KXTools.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C74GJQS7VJ;
@@ -411,6 +487,7 @@
 		};
 		473059161CC9B97600BA2E02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F25A7D14C27CE6E4966FA65 /* Pods-KXTools.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = C74GJQS7VJ;
