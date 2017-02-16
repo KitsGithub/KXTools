@@ -13,7 +13,7 @@
 
 
 ### 更新日志
-> 2.16 新增之前封装好的仿微信的弹框提示，actionSheet 和 alertView 
+> 2.16 新增之前封装好的仿微信的弹框提示，actionSheet 和 alertView  \n
 > 2.15 重新整理了ReadMe 和 调整了价格Label的具体实现
 
 
@@ -29,11 +29,9 @@ KXCustomButtonHorizontalType = 0,  /** 水平样式  */
 KXCustomButtonVerticalType = 1,    /** 垂直样式   */
 } kXCustomButtonType;
 ```
-
+`
 因而开发者们要注意指定图片的位置
 
-
-`
 ### UILabel+price (已更换实现)
 创建1个带有单位的文本,支持价钱和单位颜色不一样
 之前通过runTime 去手动创建2个不一样的label，这种方法太绕了
