@@ -37,7 +37,7 @@
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     [self.view addSubview:button];
     [button setImage:[UIImage imageNamed:@"textIcon_00"] withSize:CGSizeMake(44, 44) andSubTtitle:@"测试按钮" andFont:13 withType:KXCustomButtonVerticalType stata:UIControlStateNormal];
-    
+    /*
     UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(100, 200, 120, 44)];
     [self.view addSubview:button2];
     [button2 setImage:[UIImage imageNamed:@"BecomeSeller_emty"] withSize:CGSizeMake(20, 20) andSubTtitle:@"测试按钮2" andFont:17 withType:KXCustomButtonHorizontalType stata:UIControlStateNormal];
@@ -48,7 +48,22 @@
     button2.KXSubTitleLabel.textColor = [UIColor blackColor];
     button2.KXSelectedSubTitleLabel.textColor = [UIColor redColor];
     [button2 addTarget:self action:@selector(buttonStatusChange:) forControlEvents:UIControlEventTouchUpInside];
+    */
     
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 200, 120, 44)];
+    NSString *price = @"20";
+    NSString *unit = @"块";
+    
+    NSString *targetStr = [price stringByAppendingString:unit];
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:targetStr];
+    [attStr setAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]} range:[targetStr rangeOfString:price]];
+    
+    [attStr setAttributes:@{NSForegroundColorAttributeName : [UIColor greenColor] , NSFontAttributeName : [UIFont systemFontOfSize:13]} range:[targetStr rangeOfString:unit]];
+    
+    label.attributedText = attStr;
+    
+    
+    [self.view addSubview:label];
     
     KXCopyView *copyView = [[KXCopyView alloc] initWithControler:button andLocation:KXCopyViewLoaction_up];
     copyView.titleArray = @[@"复制",@"粘贴"];
@@ -99,7 +114,7 @@
     NSMutableDictionary *accountInfo = [KXKeyChainManager load:@"AccountInfo"];
     NSLog(@"%@",accountInfo);
     
-    
+    /*
     UIButton *touchID = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(button2.frame) + 30, [UIScreen mainScreen].bounds.size.width, 30)];
     [self.view addSubview:touchID];
     [touchID setTitle:@"点我调用touchID" forState:UIControlStateNormal];
@@ -109,7 +124,7 @@
     */
     
     
-    FMDBManager *manager = [FMDBManager shareManager];
+    //FMDBManager *manager = [FMDBManager shareManager];
     
     
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0401E1FE1E53F5CB00D2A4CD /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E1FD1E53F5CB00D2A4CD /* FMDBManager.m */; };
+		0401E2021E543BCD00D2A4CD /* NSString+FontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E2011E543BCD00D2A4CD /* NSString+FontSize.m */; };
 		049169CD1D87EC8F0047E739 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 049169C51D87EC8F0047E739 /* GTMBase64.m */; };
 		049169CE1D87EC8F0047E739 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 049169C81D87EC8F0047E739 /* NSData+AES.m */; };
 		049169CF1D87EC8F0047E739 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 049169CA1D87EC8F0047E739 /* NSString+MD5.m */; };
@@ -19,7 +20,6 @@
 		04EA790F1D8D3AFD005E5425 /* KXCopyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA79041D8D3AFD005E5425 /* KXCopyView.m */; };
 		04EA79111D8D3AFD005E5425 /* NSString+urlCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA79081D8D3AFD005E5425 /* NSString+urlCoding.m */; };
 		04EA79121D8D3AFD005E5425 /* UIButton+iconWithTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA790A1D8D3AFD005E5425 /* UIButton+iconWithTitle.m */; };
-		04EA79131D8D3AFD005E5425 /* UILabel+kxPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA790C1D8D3AFD005E5425 /* UILabel+kxPrice.m */; };
 		04EA79141D8D3AFD005E5425 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA790E1D8D3AFD005E5425 /* UINavigationBar+Awesome.m */; };
 		473059021CC9B97600BA2E02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 473059011CC9B97600BA2E02 /* main.m */; };
 		473059051CC9B97600BA2E02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 473059041CC9B97600BA2E02 /* AppDelegate.m */; };
@@ -33,6 +33,8 @@
 /* Begin PBXFileReference section */
 		0401E1FC1E53F5CB00D2A4CD /* FMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
 		0401E1FD1E53F5CB00D2A4CD /* FMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
+		0401E2001E543BCD00D2A4CD /* NSString+FontSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontSize.h"; sourceTree = "<group>"; };
+		0401E2011E543BCD00D2A4CD /* NSString+FontSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontSize.m"; sourceTree = "<group>"; };
 		049169C41D87EC8F0047E739 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		049169C51D87EC8F0047E739 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		049169C61D87EC8F0047E739 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -54,8 +56,6 @@
 		04EA79081D8D3AFD005E5425 /* NSString+urlCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+urlCoding.m"; sourceTree = "<group>"; };
 		04EA79091D8D3AFD005E5425 /* UIButton+iconWithTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+iconWithTitle.h"; sourceTree = "<group>"; };
 		04EA790A1D8D3AFD005E5425 /* UIButton+iconWithTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+iconWithTitle.m"; sourceTree = "<group>"; };
-		04EA790B1D8D3AFD005E5425 /* UILabel+kxPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+kxPrice.h"; sourceTree = "<group>"; };
-		04EA790C1D8D3AFD005E5425 /* UILabel+kxPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+kxPrice.m"; sourceTree = "<group>"; };
 		04EA790D1D8D3AFD005E5425 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		04EA790E1D8D3AFD005E5425 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		157B73693756C2C4D1D87BBB /* Pods-KXTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KXTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KXTools/Pods-KXTools.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +141,8 @@
 		04EA79021D8D3AFD005E5425 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				0401E2001E543BCD00D2A4CD /* NSString+FontSize.h */,
+				0401E2011E543BCD00D2A4CD /* NSString+FontSize.m */,
 				0401E1FC1E53F5CB00D2A4CD /* FMDBManager.h */,
 				0401E1FD1E53F5CB00D2A4CD /* FMDBManager.m */,
 				04EA79031D8D3AFD005E5425 /* KXCopyView.h */,
@@ -149,8 +151,6 @@
 				04EA79081D8D3AFD005E5425 /* NSString+urlCoding.m */,
 				04EA79091D8D3AFD005E5425 /* UIButton+iconWithTitle.h */,
 				04EA790A1D8D3AFD005E5425 /* UIButton+iconWithTitle.m */,
-				04EA790B1D8D3AFD005E5425 /* UILabel+kxPrice.h */,
-				04EA790C1D8D3AFD005E5425 /* UILabel+kxPrice.m */,
 				04EA790D1D8D3AFD005E5425 /* UINavigationBar+Awesome.h */,
 				04EA790E1D8D3AFD005E5425 /* UINavigationBar+Awesome.m */,
 				049196A81DFA9FF400208E89 /* KXTouchIDManager.h */,
@@ -354,6 +354,7 @@
 				04EA79141D8D3AFD005E5425 /* UINavigationBar+Awesome.m in Sources */,
 				04EA790F1D8D3AFD005E5425 /* KXCopyView.m in Sources */,
 				049169CE1D87EC8F0047E739 /* NSData+AES.m in Sources */,
+				0401E2021E543BCD00D2A4CD /* NSString+FontSize.m in Sources */,
 				473059081CC9B97600BA2E02 /* ViewController.m in Sources */,
 				049169CF1D87EC8F0047E739 /* NSString+MD5.m in Sources */,
 				049196AA1DFA9FF400208E89 /* KXTouchIDManager.m in Sources */,
@@ -365,7 +366,6 @@
 				0401E1FE1E53F5CB00D2A4CD /* FMDBManager.m in Sources */,
 				049169CD1D87EC8F0047E739 /* GTMBase64.m in Sources */,
 				049169D01D87EC8F0047E739 /* KXCodingManager.m in Sources */,
-				04EA79131D8D3AFD005E5425 /* UILabel+kxPrice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
