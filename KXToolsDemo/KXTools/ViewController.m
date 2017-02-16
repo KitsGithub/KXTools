@@ -114,17 +114,14 @@
     NSMutableDictionary *accountInfo = [KXKeyChainManager load:@"AccountInfo"];
     NSLog(@"%@",accountInfo);
     
-    /*
-    UIButton *touchID = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(button2.frame) + 30, [UIScreen mainScreen].bounds.size.width, 30)];
+    
+    UIButton *touchID = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(label.frame) + 30, [UIScreen mainScreen].bounds.size.width, 30)];
     [self.view addSubview:touchID];
     [touchID setTitle:@"点我调用touchID" forState:UIControlStateNormal];
     [touchID setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [touchID addTarget:self action:@selector(touchIDClick) forControlEvents:UIControlEventTouchUpInside];
-    /*
-    */
     
     
-    //FMDBManager *manager = [FMDBManager shareManager];
     
     
     

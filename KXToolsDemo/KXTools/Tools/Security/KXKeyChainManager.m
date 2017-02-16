@@ -44,7 +44,7 @@
     CFDataRef keyData = NULL;
     if (SecItemCopyMatching((CFDictionaryRef)keychainQuery, (CFTypeRef *)&keyData) == noErr) {
         @try {
-            ret = [NSKeyedUnarchiver unarchiveObjectWithData:(NSData *)keyData];
+            ret = [NSKeyedUnarchiver unarchiveObjectWithData:(__bridge NSData *)keyData];
         } @catch (NSException *e) {
             NSLog(@"Unarchive of %@ failed: %@", service, e);
         } @finally {

@@ -12,6 +12,11 @@
 - TouchID的自封装
 
 
+### 更新日志
+> 2.16 新增之前封装好的仿微信的弹框提示，actionSheet 和 alertView 
+> 2.15 重新整理了ReadMe 和 调整了价格Label的具体实现
+
+
 ### 快速创建图片在上,文字在下的按钮
 快速创建的方式
 ```ruby
@@ -95,8 +100,8 @@ base64、AES加密的工具类
 - (instancetype)initWithSequreKey:(NSString *)privateKey;
 ```
 
-* 主要功能
-    *Base64编码
+> 主要功能
+>>Base64编码
 ```ruby
 /**
 *  Base64编码
@@ -105,7 +110,7 @@ base64、AES加密的工具类
 */
 - (NSString *)base64Encoding:(NSString *)enCodingContent;
 ```
-    *Base64解码
+>>Base64解码
 ```ruby
 /**
 *  Base64解码
@@ -114,7 +119,7 @@ base64、AES加密的工具类
 */
 - (NSString *)base64Decoding:(NSString *)deCodingContent;
 ```
-    *AES编码
+>>AES编码
 ```ruby
 /**
 *  AES编码 + base64编码
@@ -125,7 +130,7 @@ base64、AES加密的工具类
 */
 - (NSString *)AESEncoding:(NSString *)enCodingContent;
 ```
-    *AES解码
+>>AES解码
 ```ruby
 /**
 *  AES解码 + base64解码
@@ -139,3 +144,4 @@ base64、AES加密的工具类
 
 ### KXTouchIDManager
 初步封装TouchID 的流程和操作指令
+
