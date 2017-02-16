@@ -13,17 +13,19 @@
 
 
 ### 更新日志
-> 2.16 新增之前封装好的仿微信的弹框提示，actionSheet 和 alertView  \n
+> 2.16 新增之前封装好的仿微信的弹框提示，actionSheet 和 alertView
+>
 > 2.15 重新整理了ReadMe 和 调整了价格Label的具体实现
+>
 
 
 ### 快速创建图片在上,文字在下的按钮
 快速创建的方式
-```ruby
+```objc
 [button setImage:[UIImage imageNamed:@"xxx"] withSize:CGSizeMake(44, 44) andSubTtitle:@"测试按钮" andFont:13 withType:KXCustomButtonVerticalType stata:UIControlStateNormal];
 ```
 其中
-```ruby
+```objc
 typedef enum : NSUInteger {
 KXCustomButtonHorizontalType = 0,  /** 水平样式  */
 KXCustomButtonVerticalType = 1,    /** 垂直样式   */
@@ -37,12 +39,12 @@ KXCustomButtonVerticalType = 1,    /** 垂直样式   */
 之前通过runTime 去手动创建2个不一样的label，这种方法太绕了
 所以现在更换了另一种实现方式，去掉了price的Label分类
 通过
-```ruby
+```objc
 NSMutableAttributedString  //设置文本的动态属性
 ```
 去达到之前的目的
 核心代码
-```ruby
+```objc
 NSString *targetStr = [price stringByAppendingString:unit];
 //设置价钱的渲染
 NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:targetStr];
@@ -54,7 +56,7 @@ NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithS
 ###  NSString+urlCoding
 如题所示， url的编码与解码
 前一段时间，在项目中遇到再URL请求的时候带上了中文，然后导致编码问题，以致于后台前端都无法接收，因此在传输/解析之前，需要对中文部分进行编码/解码
-```ruby
+```objc
 /**
 *  中文编码
 */
@@ -76,15 +78,15 @@ NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithS
 ### UINavigationBar+Awesome
 由于NavBar是单例的，因而我常常在碰到需要随时更变导航条的颜色的时候，总是很蛋疼
 有时候是因为进场动画、有时候是因为退场动画
-```ruby
+```objc
 - (void)lt_setBackgroundColor:(UIColor *)backgroundColor;  //更换导航栏的背景颜色
 ```
 我们在退场的时候需要调用，让导航条重置为之前的状态
-```ruby
+```objc
 - (void)lt_reset; 
 ```
 ### FMDBManager
-```ruby
+```objc
 未完成 
 ```
 因为现在的项目接触到FMDB这个类
@@ -94,13 +96,13 @@ NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithS
 ### KXCodingManager
 base64、AES加密的工具类
 使用这个方法进行Manager初始化
-```ruby
+```objc
 - (instancetype)initWithSequreKey:(NSString *)privateKey;
 ```
 
 > 主要功能
 >>Base64编码
-```ruby
+```objc
 /**
 *  Base64编码
 *  enCodingContent  编码字符串
@@ -109,7 +111,7 @@ base64、AES加密的工具类
 - (NSString *)base64Encoding:(NSString *)enCodingContent;
 ```
 >>Base64解码
-```ruby
+```objc
 /**
 *  Base64解码
 *  deCodingContent  待解码字符串
@@ -118,7 +120,7 @@ base64、AES加密的工具类
 - (NSString *)base64Decoding:(NSString *)deCodingContent;
 ```
 >>AES编码
-```ruby
+```objc
 /**
 *  AES编码 + base64编码
 *  一个字符串，经过 _privateKey 进行AES加密并进行Bser64加密
@@ -129,7 +131,7 @@ base64、AES加密的工具类
 - (NSString *)AESEncoding:(NSString *)enCodingContent;
 ```
 >>AES解码
-```ruby
+```objc
 /**
 *  AES解码 + base64解码
 *  一个经过AES编码过的字符串，通过 _privateKey 解码
