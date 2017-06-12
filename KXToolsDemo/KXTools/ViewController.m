@@ -9,11 +9,13 @@
 #import "ViewController.h"
 #import <LocalAuthentication/LocalAuthentication.h>
 
+//自定义控制器
+#import "Test1ViewController.h"
+#import "Test2ViewController.h"
+
 //自定义类
-#import "UIButton+iconWithTitle.h"
 #import "KXCodingManager.h"
 #import "KXKeyChainManager.h"
-#import "KXCopyView.h"
 
 //TouchID 管理类
 #import "KXTouchIDManager.h"
@@ -26,52 +28,71 @@
 
 @implementation ViewController {
     LAContext *_context;
+    UILabel *_copyTestLabel;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [self setupNav];
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    [self.view addSubview:button];
-    [button setImage:[UIImage imageNamed:@"textIcon_00"] withSize:CGSizeMake(44, 44) andSubTtitle:@"测试按钮" andFont:13 withType:KXCustomButtonVerticalType stata:UIControlStateNormal];
-    /*
-    UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(100, 200, 120, 44)];
-    [self.view addSubview:button2];
-    [button2 setImage:[UIImage imageNamed:@"BecomeSeller_emty"] withSize:CGSizeMake(20, 20) andSubTtitle:@"测试按钮2" andFont:17 withType:KXCustomButtonHorizontalType stata:UIControlStateNormal];
+    _copyTestLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, ScreenWidth, 30)];
+    _copyTestLabel.text = @"长按复制功能";
+    _copyTestLabel.textAlignment = NSTextAlignmentCenter;
+    _copyTestLabel.userInteractionEnabled = YES;
+    [self.view addSubview:_copyTestLabel];
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(copyLabelDidLongPress:)];
+    [_copyTestLabel addGestureRecognizer:longPress];
     
-    [button2 setImage:[UIImage imageNamed:@"BecomeSeller_tick"] withSize:CGSizeMake(20, 20) andSubTtitle:@"测试按钮2" andFont:17 withType:KXCustomButtonHorizontalType stata:UIControlStateSelected];
     
-    [button2 setKXSubTitleLabelTextAlignment:NSTextAlignmentCenter];
-    button2.KXSubTitleLabel.textColor = [UIColor blackColor];
-    button2.KXSelectedSubTitleLabel.textColor = [UIColor redColor];
-    [button2 addTarget:self action:@selector(buttonStatusChange:) forControlEvents:UIControlEventTouchUpInside];
-    */
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 200, 120, 44)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, CGRectGetMaxY(_copyTestLabel.frame), 120, 44)];
     NSString *price = @"20";
     NSString *unit = @"块";
-    
     NSString *targetStr = [price stringByAppendingString:unit];
     NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:targetStr];
     [attStr setAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]} range:[targetStr rangeOfString:price]];
-    
     [attStr setAttributes:@{NSForegroundColorAttributeName : [UIColor greenColor] , NSFontAttributeName : [UIFont systemFontOfSize:13]} range:[targetStr rangeOfString:unit]];
-    
     label.attributedText = attStr;
-    
-    
     [self.view addSubview:label];
     
-    KXCopyView *copyView = [[KXCopyView alloc] initWithControler:button andLocation:KXCopyViewLoaction_up];
-    copyView.titleArray = @[@"复制",@"粘贴"];
-    [copyView setImage:[UIImage imageNamed:@"Discovre_Copy"] andInsets:UIEdgeInsetsMake(30, 40, 30, 40)];
-    
-    [self.view addSubview:copyView];
-    [copyView showAnimation];
     
     
+    //3DTouch 功能
+    UIButton *touchID = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(label.frame) + 30, ScreenWidth, 30)];
+    [self.view addSubview:touchID];
+    [touchID setTitle:@"点我调用touchID" forState:UIControlStateNormal];
+    [touchID setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [touchID addTarget:self action:@selector(touchIDClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    //加解密  功能
+    UIButton *securityCoding = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(touchID.frame) + 30, ScreenWidth, 30)];
+    [self.view addSubview:securityCoding];
+    [securityCoding setTitle:@"点我调用加解密" forState:UIControlStateNormal];
+    [securityCoding setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [securityCoding addTarget:self action:@selector(coding) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+
+- (void)setupNav {
+    self.title = @"测试";
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToNavVc)];
+    
+    
+}
+
+//跳转到一个有导航栏的界面
+- (void)jumpToNavVc {
+    Test1ViewController *VC = [[Test1ViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
+//加解密调用
+- (void)coding {
     KXCodingManager *manager = [[KXCodingManager alloc] initWithSequreKey:@"yihezhai16816888"];
     
     NSString *encodingStr = [manager base64Encoding:@"我爱你"];
@@ -112,23 +133,43 @@
     
     NSMutableDictionary *accountInfo = [KXKeyChainManager load:@"AccountInfo"];
     NSLog(@"%@",accountInfo);
-    
-    
-    UIButton *touchID = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(label.frame) + 30, [UIScreen mainScreen].bounds.size.width, 30)];
-    [self.view addSubview:touchID];
-    [touchID setTitle:@"点我调用touchID" forState:UIControlStateNormal];
-    [touchID setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [touchID addTarget:self action:@selector(touchIDClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    
-    
-    
-    
-    
 
 }
 
+//长按复制
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+-(BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    if (action == @selector(menuCopyBtnPressed:)) {
+        return YES;
+    }
+    return NO;
+}
+
+- (void)copyLabelDidLongPress:(UILongPressGestureRecognizer *)gesture {
+    
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        [self becomeFirstResponder];
+        
+        UIMenuController *menuController = [UIMenuController sharedMenuController];
+        UIMenuItem *copyItem = [[UIMenuItem alloc] initWithTitle:@"复制" action:@selector(menuCopyBtnPressed:)];
+        menuController.menuItems = @[copyItem];
+        [menuController setTargetRect:gesture.view.frame inView:gesture.view.superview];
+        [menuController setMenuVisible:YES animated:YES];
+        [UIMenuController sharedMenuController].menuItems=nil;
+    }
+}
+
+-(void)menuCopyBtnPressed:(UIMenuItem *)menuItem
+{
+    [UIPasteboard generalPasteboard].string = _copyTestLabel.text;
+}
+
+//touchID 调用
 - (void)touchIDClick {
     if (!_context) {
         _context = [[LAContext alloc] init];
@@ -144,10 +185,7 @@
     }
 }
 
-- (void)buttonStatusChange:(UIButton *)sender {
-    NSLog(@"换了");
-    sender.selected = !sender.selected;
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		0401E2551E557C4300D2A4CD /* NSString+FontSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E2351E557C4300D2A4CD /* NSString+FontSize.m */; };
 		0401E2561E557C4300D2A4CD /* NSString+urlCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E2371E557C4300D2A4CD /* NSString+urlCoding.m */; };
-		0401E2571E557C4300D2A4CD /* UIButton+iconWithTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E2391E557C4300D2A4CD /* UIButton+iconWithTitle.m */; };
 		0401E2581E557C4300D2A4CD /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E23B1E557C4300D2A4CD /* UINavigationBar+Awesome.m */; };
 		0401E25A1E557C4300D2A4CD /* KXActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E2401E557C4300D2A4CD /* KXActionSheet.m */; };
 		0401E25B1E557C4300D2A4CD /* KXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E2421E557C4300D2A4CD /* KXAlertView.m */; };
-		0401E25C1E557C4300D2A4CD /* KXCopyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E2441E557C4300D2A4CD /* KXCopyView.m */; };
 		0401E25D1E557C4300D2A4CD /* KXTouchIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E2461E557C4300D2A4CD /* KXTouchIDManager.m */; };
 		0401E25E1E557C4300D2A4CD /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E24B1E557C4300D2A4CD /* GTMBase64.m */; };
 		0401E25F1E557C4300D2A4CD /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401E24E1E557C4300D2A4CD /* NSData+AES.m */; };
@@ -33,12 +31,15 @@
 		04434DE81EEE86F500C2CE2D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 04434DDC1EEE86F500C2CE2D /* LICENSE */; };
 		04434DE91EEE86F500C2CE2D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 04434DDD1EEE86F500C2CE2D /* README.md */; };
 		04434DED1EEE874300C2CE2D /* UIColor+My.m in Sources */ = {isa = PBXBuildFile; fileRef = 04434DEC1EEE874300C2CE2D /* UIColor+My.m */; };
+		04434DF11EEE8DB800C2CE2D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04434DF01EEE8DB800C2CE2D /* BaseNavigationController.m */; };
+		04434DF41EEE920600C2CE2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04434DF21EEE920600C2CE2D /* Main.storyboard */; };
+		04434DF81EEE932C00C2CE2D /* Test1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04434DF71EEE932C00C2CE2D /* Test1ViewController.m */; };
+		04434DFB1EEE933900C2CE2D /* Test2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04434DFA1EEE933900C2CE2D /* Test2ViewController.m */; };
 		049196A51DFA9D0F00208E89 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049196A41DFA9D0F00208E89 /* Security.framework */; };
 		049196A71DFA9F0300208E89 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049196A61DFA9F0300208E89 /* LocalAuthentication.framework */; };
 		473059021CC9B97600BA2E02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 473059011CC9B97600BA2E02 /* main.m */; };
 		473059051CC9B97600BA2E02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 473059041CC9B97600BA2E02 /* AppDelegate.m */; };
 		473059081CC9B97600BA2E02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473059071CC9B97600BA2E02 /* ViewController.m */; };
-		4730590B1CC9B97600BA2E02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 473059091CC9B97600BA2E02 /* Main.storyboard */; };
 		4730590D1CC9B97600BA2E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4730590C1CC9B97600BA2E02 /* Assets.xcassets */; };
 		473059101CC9B97600BA2E02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4730590E1CC9B97600BA2E02 /* LaunchScreen.storyboard */; };
 		C772DC2B482D88EBF0C606E5 /* libPods-KXTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9602395FC1826AB846507F9E /* libPods-KXTools.a */; };
@@ -49,16 +50,12 @@
 		0401E2351E557C4300D2A4CD /* NSString+FontSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontSize.m"; sourceTree = "<group>"; };
 		0401E2361E557C4300D2A4CD /* NSString+urlCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+urlCoding.h"; sourceTree = "<group>"; };
 		0401E2371E557C4300D2A4CD /* NSString+urlCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+urlCoding.m"; sourceTree = "<group>"; };
-		0401E2381E557C4300D2A4CD /* UIButton+iconWithTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+iconWithTitle.h"; sourceTree = "<group>"; };
-		0401E2391E557C4300D2A4CD /* UIButton+iconWithTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+iconWithTitle.m"; sourceTree = "<group>"; };
 		0401E23A1E557C4300D2A4CD /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		0401E23B1E557C4300D2A4CD /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		0401E23F1E557C4300D2A4CD /* KXActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXActionSheet.h; sourceTree = "<group>"; };
 		0401E2401E557C4300D2A4CD /* KXActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXActionSheet.m; sourceTree = "<group>"; };
 		0401E2411E557C4300D2A4CD /* KXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXAlertView.h; sourceTree = "<group>"; };
 		0401E2421E557C4300D2A4CD /* KXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXAlertView.m; sourceTree = "<group>"; };
-		0401E2431E557C4300D2A4CD /* KXCopyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXCopyView.h; sourceTree = "<group>"; };
-		0401E2441E557C4300D2A4CD /* KXCopyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXCopyView.m; sourceTree = "<group>"; };
 		0401E2451E557C4300D2A4CD /* KXTouchIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXTouchIDManager.h; sourceTree = "<group>"; };
 		0401E2461E557C4300D2A4CD /* KXTouchIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXTouchIDManager.m; sourceTree = "<group>"; };
 		0401E24A1E557C4300D2A4CD /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
@@ -98,6 +95,13 @@
 		04434DEA1EEE870900C2CE2D /* KXToolsPCH.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXToolsPCH.pch; sourceTree = "<group>"; };
 		04434DEB1EEE874300C2CE2D /* UIColor+My.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+My.h"; sourceTree = "<group>"; };
 		04434DEC1EEE874300C2CE2D /* UIColor+My.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+My.m"; sourceTree = "<group>"; };
+		04434DEF1EEE8DB800C2CE2D /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		04434DF01EEE8DB800C2CE2D /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		04434DF31EEE920600C2CE2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04434DF61EEE932C00C2CE2D /* Test1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test1ViewController.h; sourceTree = "<group>"; };
+		04434DF71EEE932C00C2CE2D /* Test1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test1ViewController.m; sourceTree = "<group>"; };
+		04434DF91EEE933900C2CE2D /* Test2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test2ViewController.h; sourceTree = "<group>"; };
+		04434DFA1EEE933900C2CE2D /* Test2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test2ViewController.m; sourceTree = "<group>"; };
 		049196A41DFA9D0F00208E89 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		049196A61DFA9F0300208E89 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		157B73693756C2C4D1D87BBB /* Pods-KXTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KXTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KXTools/Pods-KXTools.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +111,6 @@
 		473059041CC9B97600BA2E02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		473059061CC9B97600BA2E02 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		473059071CC9B97600BA2E02 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		4730590A1CC9B97600BA2E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4730590C1CC9B97600BA2E02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4730590F1CC9B97600BA2E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		473059111CC9B97600BA2E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,8 +148,6 @@
 				0401E2351E557C4300D2A4CD /* NSString+FontSize.m */,
 				0401E2361E557C4300D2A4CD /* NSString+urlCoding.h */,
 				0401E2371E557C4300D2A4CD /* NSString+urlCoding.m */,
-				0401E2381E557C4300D2A4CD /* UIButton+iconWithTitle.h */,
-				0401E2391E557C4300D2A4CD /* UIButton+iconWithTitle.m */,
 				0401E23A1E557C4300D2A4CD /* UINavigationBar+Awesome.h */,
 				0401E23B1E557C4300D2A4CD /* UINavigationBar+Awesome.m */,
 			);
@@ -160,8 +161,6 @@
 				0401E2401E557C4300D2A4CD /* KXActionSheet.m */,
 				0401E2411E557C4300D2A4CD /* KXAlertView.h */,
 				0401E2421E557C4300D2A4CD /* KXAlertView.m */,
-				0401E2431E557C4300D2A4CD /* KXCopyView.h */,
-				0401E2441E557C4300D2A4CD /* KXCopyView.m */,
 				0401E2451E557C4300D2A4CD /* KXTouchIDManager.h */,
 				0401E2461E557C4300D2A4CD /* KXTouchIDManager.m */,
 			);
@@ -272,6 +271,27 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		04434DEE1EEE8D9600C2CE2D /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				04434DEF1EEE8DB800C2CE2D /* BaseNavigationController.h */,
+				04434DF01EEE8DB800C2CE2D /* BaseNavigationController.m */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		04434DF51EEE931E00C2CE2D /* TestView */ = {
+			isa = PBXGroup;
+			children = (
+				04434DF61EEE932C00C2CE2D /* Test1ViewController.h */,
+				04434DF71EEE932C00C2CE2D /* Test1ViewController.m */,
+				04434DF91EEE933900C2CE2D /* Test2ViewController.h */,
+				04434DFA1EEE933900C2CE2D /* Test2ViewController.m */,
+			);
+			name = TestView;
+			path = Tools/TestView;
+			sourceTree = "<group>";
+		};
 		049196A31DFA9D0F00208E89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,16 +335,17 @@
 				0401E1FF1E53F86E00D2A4CD /* DemoModel */,
 				473059271CC9BAC600BA2E02 /* categray */,
 				473059171CC9BAB300BA2E02 /* Tools */,
-				473059031CC9B97600BA2E02 /* AppDelegate.h */,
-				473059041CC9B97600BA2E02 /* AppDelegate.m */,
+				04434DF51EEE931E00C2CE2D /* TestView */,
 				473059061CC9B97600BA2E02 /* ViewController.h */,
 				473059071CC9B97600BA2E02 /* ViewController.m */,
-				473059091CC9B97600BA2E02 /* Main.storyboard */,
 				4730590C1CC9B97600BA2E02 /* Assets.xcassets */,
+				04434DF21EEE920600C2CE2D /* Main.storyboard */,
 				4730590E1CC9B97600BA2E02 /* LaunchScreen.storyboard */,
 				473059111CC9B97600BA2E02 /* Info.plist */,
 				473059001CC9B97600BA2E02 /* Supporting Files */,
 				04434DEA1EEE870900C2CE2D /* KXToolsPCH.pch */,
+				473059031CC9B97600BA2E02 /* AppDelegate.h */,
+				473059041CC9B97600BA2E02 /* AppDelegate.m */,
 			);
 			path = KXTools;
 			sourceTree = "<group>";
@@ -340,6 +361,7 @@
 		473059171CC9BAB300BA2E02 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				04434DEE1EEE8D9600C2CE2D /* BaseView */,
 				04434DC11EEE86F500C2CE2D /* TheThirdPart */,
 				0401E2331E557C4300D2A4CD /* categray */,
 				0401E23C1E557C4300D2A4CD /* Lib */,
@@ -419,7 +441,7 @@
 				473059101CC9B97600BA2E02 /* LaunchScreen.storyboard in Resources */,
 				4730590D1CC9B97600BA2E02 /* Assets.xcassets in Resources */,
 				04434DE81EEE86F500C2CE2D /* LICENSE in Resources */,
-				4730590B1CC9B97600BA2E02 /* Main.storyboard in Resources */,
+				04434DF41EEE920600C2CE2D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +504,7 @@
 				0401E25F1E557C4300D2A4CD /* NSData+AES.m in Sources */,
 				04434DDE1EEE86F500C2CE2D /* NSAttributedString+MLLabel.m in Sources */,
 				0401E2561E557C4300D2A4CD /* NSString+urlCoding.m in Sources */,
+				04434DF81EEE932C00C2CE2D /* Test1ViewController.m in Sources */,
 				473059081CC9B97600BA2E02 /* ViewController.m in Sources */,
 				04434DE71EEE86F500C2CE2D /* MLLinkLabel.m in Sources */,
 				0401E2621E557C4300D2A4CD /* KXKeyChainManager.m in Sources */,
@@ -492,7 +515,6 @@
 				0401E25A1E557C4300D2A4CD /* KXActionSheet.m in Sources */,
 				0401E25D1E557C4300D2A4CD /* KXTouchIDManager.m in Sources */,
 				473059051CC9B97600BA2E02 /* AppDelegate.m in Sources */,
-				0401E25C1E557C4300D2A4CD /* KXCopyView.m in Sources */,
 				0401E25B1E557C4300D2A4CD /* KXAlertView.m in Sources */,
 				0401E2581E557C4300D2A4CD /* UINavigationBar+Awesome.m in Sources */,
 				04434DE41EEE86F500C2CE2D /* NSString+MLExpression.m in Sources */,
@@ -502,20 +524,21 @@
 				0401E25E1E557C4300D2A4CD /* GTMBase64.m in Sources */,
 				0401E2601E557C4300D2A4CD /* NSString+MD5.m in Sources */,
 				04434DED1EEE874300C2CE2D /* UIColor+My.m in Sources */,
+				04434DFB1EEE933900C2CE2D /* Test2ViewController.m in Sources */,
+				04434DF11EEE8DB800C2CE2D /* BaseNavigationController.m in Sources */,
 				04434DDF1EEE86F500C2CE2D /* NSMutableAttributedString+MLLabel.m in Sources */,
 				0401E2551E557C4300D2A4CD /* NSString+FontSize.m in Sources */,
 				0401E2611E557C4300D2A4CD /* KXCodingManager.m in Sources */,
-				0401E2571E557C4300D2A4CD /* UIButton+iconWithTitle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		473059091CC9B97600BA2E02 /* Main.storyboard */ = {
+		04434DF21EEE920600C2CE2D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4730590A1CC9B97600BA2E02 /* Base */,
+				04434DF31EEE920600C2CE2D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
