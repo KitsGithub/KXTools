@@ -19,7 +19,6 @@
 #import "KXTouchIDManager.h"
 
 //FMDB的第三方封装
-#import "FMDBManager.h"
 
 @interface ViewController ()
 

@@ -1,0 +1,21 @@
+//
+//  KXToolsPCH.pch
+//  KXTools
+//
+//  Created by mac on 2017/6/12.
+//  Copyright © 2017年 kit. All rights reserved.
+//
+
+#ifndef KXToolsPCH_pch
+#define KXToolsPCH_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIColor+My.h"
+#import "NSString+FontSize.h"
+
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#endif /* KXToolsPCH_pch */

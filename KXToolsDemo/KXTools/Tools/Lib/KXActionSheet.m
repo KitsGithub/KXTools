@@ -44,6 +44,7 @@
         buttonCount = titles.count + 2;
     }
     
+    
     UIView *buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight([UIScreen mainScreen].bounds), ScreenWidth, ButtonHeight * buttonCount + 5)];
     [self addSubview:buttonView];
     _buttonView = buttonView;
@@ -102,7 +103,7 @@
 - (void)show {
     [UIView animateWithDuration:0.3 animations:^{
         _bjView.alpha = 0.3;
-        CGFloat height = _buttonView.height;
+        CGFloat height = CGRectGetHeight(_buttonView.frame);
         _buttonView.frame = CGRectMake(0, ScreenHeight - height, ScreenWidth, height);
     } completion:^(BOOL finished) {
         
@@ -113,7 +114,7 @@
 - (void)setInportanceTitleAtIndex:(NSUInteger)index {
     for (UIButton *targetButton in _buttonView.subviews) {
         if ([targetButton isKindOfClass:[UIButton class]] && targetButton.tag == index) {
-            [targetButton setTitleColor:THEMECOLOR forState:UIControlStateNormal];
+            [targetButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
             break;
         }
     }
@@ -148,7 +149,7 @@
 - (void)bjViewDidClick {
     [UIView animateWithDuration:0.3 animations:^{
         self.alpha = 0.0f;
-        _buttonView.frame = CGRectMake(0, CGRectGetHeight([UIScreen mainScreen].bounds), ScreenWidth, _buttonView.height);
+        _buttonView.frame = CGRectMake(0, CGRectGetHeight([UIScreen mainScreen].bounds), ScreenWidth, CGRectGetHeight(_buttonView.frame));
     } completion:^(BOOL finished) {
         if ([self.delegate respondsToSelector:@selector(KXActionSheetDidDisappear:)]) {
             [self.delegate KXActionSheetDidDisappear:self];
