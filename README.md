@@ -1,6 +1,6 @@
 ## KXTools
 
-自己由于工作需要而封装的一些基本控件＜/br＞
+自己由于工作需要而封装的一些基本控件<br/>
 大家多多交流，多多指教，遇到问题可以联系我QQ: 381377046 ，备注KXTools 我会尽快优化
 
 ## 目录
@@ -64,13 +64,10 @@ BaseNavigationController 同时内部实现了statusBar的childViewController
 @param cancelTitle 取消位置
 @param titles      其他按钮（数组形式）
 */
-- (instancetype)initWithTitle:(NSString *)titleName
-delegate:(id <KXActionSheetDelegate>)delegate
-cancellTitle:(NSString *)cancelTitle
-andOtherButtonTitles:(NSArray *)titles;
+- (instancetype)initWithTitle:(NSString *)titleName delegate:(id <KXActionSheetDelegate>)delegate cancellTitle:(NSString *)cancelTitle andOtherButtonTitles:(NSArray *)titles;
 ```
 
-为了方便，我提供了两个方法设置标题内容＜/br＞
+为了方便，我提供了两个方法设置标题内容<br/>
 一个是自定义一个富文本传进去，但是会覆盖之前设置的文本内容
 ```objc
 /**
@@ -88,7 +85,7 @@ typedef void(^SetTitleBlock)(UILabel *_titleLabel);
 - (void)setTitleColorWithAttributedStrWithBlock:(SetTitleBlock)block;
 ```
 
-由于业务关系，经常会重点标注某一行，以显示其重要性＜/br＞
+由于业务关系，经常会重点标注某一行，以显示其重要性<br/>
 因此也提供了一个方法用以标红某一行
 ```objc
 /**
@@ -109,10 +106,7 @@ typedef void(^SetTitleBlock)(UILabel *_titleLabel);
 @param edgInsets   图片距文字的边距
 @param aligment    按钮的编辑方式
 */
-- (void)setSubTitleImageWithIndex:(NSUInteger)index
-image:(UIImage *)image
-titleEdgeInsets:(UIEdgeInsets)edgInsets
-WithAligment:(UIControlContentHorizontalAlignment)aligment;
+- (void)setSubTitleImageWithIndex:(NSUInteger)index image:(UIImage *)image titleEdgeInsets:(UIEdgeInsets)edgInsets  WithAligment:(UIControlContentHorizontalAlignment)aligment;
 ```
 
 展示方法
@@ -137,11 +131,7 @@ WithAligment:(UIControlContentHorizontalAlignment)aligment;
 
 @return 实例化对象
 */
-- (instancetype)initWithTitle:(NSString *)title
-andMessage:(NSString *)message
-delegate:(id <KXAlertViewDelegate>)delegate
-andCancelButton:(NSString *)cancel
-andSubTitle:(NSString *)andSubTitle;
+- (instancetype)initWithTitle:(NSString *)title andMessage:(NSString *)message delegate:(id <KXAlertViewDelegate>)delegate andCancelButton:(NSString *)cancel andSubTitle:(NSString *)andSubTitle;
 ```
 
 ```objc
@@ -182,7 +172,7 @@ andSubTitle:(NSString *)andSubTitle;
 
 
 ### UINavigationBar+Awesome
-由于NavBar是单例的，因而我常常在碰到需要随时更变导航条的颜色的时候，总是很蛋疼＜/br＞
+由于NavBar是单例的，因而我常常在碰到需要随时更变导航条的颜色的时候，总是很蛋疼<br/>
 有时候是因为进场动画、有时候是因为退场动画
 ```objc
 - (void)lt_setBackgroundColor:(UIColor *)backgroundColor;  //更换导航栏的背景颜色
@@ -200,8 +190,8 @@ andSubTitle:(NSString *)andSubTitle;
 
 
 ### KXCodingManager
-需要导入libz.tbd＜/br＞
-base64、AES加密的工具类＜/br＞
+需要导入libz.tbd<br/>
+base64、AES加密的工具类<br/>
 使用这个方法进行Manager初始化
 ```objc
 - (instancetype)initWithSequreKey:(NSString *)privateKey;

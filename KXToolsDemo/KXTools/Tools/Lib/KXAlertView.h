@@ -24,7 +24,8 @@
 
  @param linkValue 目标文本的值
  */
-- (void)KXAlertView:(KXAlertView *)alertView ClickSpacialLinkWithLinkValue:(NSString *)linkValue;
+- (void)KXAlertView:(KXAlertView *)alertView
+ClickSpacialLinkWithLinkValue:(NSString *)linkValue;
 
 @end
 
