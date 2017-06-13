@@ -35,6 +35,8 @@
 		04434DF41EEE920600C2CE2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04434DF21EEE920600C2CE2D /* Main.storyboard */; };
 		04434DF81EEE932C00C2CE2D /* Test1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04434DF71EEE932C00C2CE2D /* Test1ViewController.m */; };
 		04434DFB1EEE933900C2CE2D /* Test2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04434DFA1EEE933900C2CE2D /* Test2ViewController.m */; };
+		04434DFD1EEE999100C2CE2D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04434DFC1EEE999100C2CE2D /* libz.tbd */; };
+		04434E021EEE9B9E00C2CE2D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04434E011EEE9B9E00C2CE2D /* BaseViewController.m */; };
 		049196A51DFA9D0F00208E89 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049196A41DFA9D0F00208E89 /* Security.framework */; };
 		049196A71DFA9F0300208E89 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049196A61DFA9F0300208E89 /* LocalAuthentication.framework */; };
 		473059021CC9B97600BA2E02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 473059011CC9B97600BA2E02 /* main.m */; };
@@ -102,6 +104,10 @@
 		04434DF71EEE932C00C2CE2D /* Test1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test1ViewController.m; sourceTree = "<group>"; };
 		04434DF91EEE933900C2CE2D /* Test2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test2ViewController.h; sourceTree = "<group>"; };
 		04434DFA1EEE933900C2CE2D /* Test2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test2ViewController.m; sourceTree = "<group>"; };
+		04434DFC1EEE999100C2CE2D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		04434DFE1EEE99A100C2CE2D /* libFMDB.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMDB.a; path = "../../../Library/Developer/Xcode/DerivedData/KXTools-eyjdkgultqelsdfegoynelynlbjk/Build/Products/Debug-iphoneos/FMDB/libFMDB.a"; sourceTree = "<group>"; };
+		04434E001EEE9B9E00C2CE2D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		04434E011EEE9B9E00C2CE2D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		049196A41DFA9D0F00208E89 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		049196A61DFA9F0300208E89 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		157B73693756C2C4D1D87BBB /* Pods-KXTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KXTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KXTools/Pods-KXTools.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,8 +115,8 @@
 		473059011CC9B97600BA2E02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		473059031CC9B97600BA2E02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		473059041CC9B97600BA2E02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		473059061CC9B97600BA2E02 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		473059071CC9B97600BA2E02 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		473059061CC9B97600BA2E02 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../../ViewController.h; sourceTree = "<group>"; };
+		473059071CC9B97600BA2E02 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../../ViewController.m; sourceTree = "<group>"; };
 		4730590C1CC9B97600BA2E02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4730590F1CC9B97600BA2E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		473059111CC9B97600BA2E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04434DFD1EEE999100C2CE2D /* libz.tbd in Frameworks */,
 				049196A71DFA9F0300208E89 /* LocalAuthentication.framework in Frameworks */,
 				049196A51DFA9D0F00208E89 /* Security.framework in Frameworks */,
 				C772DC2B482D88EBF0C606E5 /* libPods-KXTools.a in Frameworks */,
@@ -276,6 +283,8 @@
 			children = (
 				04434DEF1EEE8DB800C2CE2D /* BaseNavigationController.h */,
 				04434DF01EEE8DB800C2CE2D /* BaseNavigationController.m */,
+				04434E001EEE9B9E00C2CE2D /* BaseViewController.h */,
+				04434E011EEE9B9E00C2CE2D /* BaseViewController.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -283,6 +292,8 @@
 		04434DF51EEE931E00C2CE2D /* TestView */ = {
 			isa = PBXGroup;
 			children = (
+				473059061CC9B97600BA2E02 /* ViewController.h */,
+				473059071CC9B97600BA2E02 /* ViewController.m */,
 				04434DF61EEE932C00C2CE2D /* Test1ViewController.h */,
 				04434DF71EEE932C00C2CE2D /* Test1ViewController.m */,
 				04434DF91EEE933900C2CE2D /* Test2ViewController.h */,
@@ -295,6 +306,8 @@
 		049196A31DFA9D0F00208E89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04434DFE1EEE99A100C2CE2D /* libFMDB.a */,
+				04434DFC1EEE999100C2CE2D /* libz.tbd */,
 				049196A61DFA9F0300208E89 /* LocalAuthentication.framework */,
 				049196A41DFA9D0F00208E89 /* Security.framework */,
 				9602395FC1826AB846507F9E /* libPods-KXTools.a */,
@@ -336,8 +349,6 @@
 				473059271CC9BAC600BA2E02 /* categray */,
 				473059171CC9BAB300BA2E02 /* Tools */,
 				04434DF51EEE931E00C2CE2D /* TestView */,
-				473059061CC9B97600BA2E02 /* ViewController.h */,
-				473059071CC9B97600BA2E02 /* ViewController.m */,
 				4730590C1CC9B97600BA2E02 /* Assets.xcassets */,
 				04434DF21EEE920600C2CE2D /* Main.storyboard */,
 				4730590E1CC9B97600BA2E02 /* LaunchScreen.storyboard */,
@@ -501,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04434DE21EEE86F500C2CE2D /* MLTextAttachment.m in Sources */,
+				04434E021EEE9B9E00C2CE2D /* BaseViewController.m in Sources */,
 				0401E25F1E557C4300D2A4CD /* NSData+AES.m in Sources */,
 				04434DDE1EEE86F500C2CE2D /* NSAttributedString+MLLabel.m in Sources */,
 				0401E2561E557C4300D2A4CD /* NSString+urlCoding.m in Sources */,

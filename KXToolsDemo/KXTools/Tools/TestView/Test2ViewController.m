@@ -19,6 +19,12 @@
     // Do any additional setup after loading the view.
     
     [self setupNav];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    button.backgroundColor = [UIColor redColor];
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(buttonDidClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,10 +36,27 @@
     BaseNavigationController *baseNav = (BaseNavigationController *)self.navigationController;
     [baseNav setBottomLineViewHiden:YES];
     
-    //设置导航栏背景
-    [baseNav.navigationBar setBackgroundImage:[UIImage imageNamed:@"WhiteImage"] forBarMetrics:UIBarMetricsDefault];
     
-    self.title = @"测试1";
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //设置导航栏背景
+    self.navigationController.navigationBar.barTintColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
+    
+    
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+}
+
+
+- (void)buttonDidClick {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

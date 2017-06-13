@@ -16,8 +16,8 @@
 //创建1个单例对象
 - (instancetype)initWithSequreKey:(NSString *)privateKey;
 
-
-#pragma mark - base64编码
+#pragma mark - base64编码/解码
+#pragma mark base64编码
 /**
  *  Base64编码
  *  enCodingContent  编码字符串
@@ -42,7 +42,7 @@
 
 
 
-#pragma mark - base64解码
+#pragma mark base64解码
 /**
  *  Base64解码
  *  deCodingContent  待解码字符串
@@ -52,8 +52,8 @@
 
 
 
-
-#pragma mark - AES编码
+#pragma mark - AES编码/解码
+#pragma mark AES编码
 /**
  *  AES编码 + base64编码
  *  一个字符串，经过 _privateKey 进行AES加密并进行Bser64加密
@@ -74,7 +74,7 @@
 - (NSData *)AESEncodingWithString:(NSString *)enCodingContent;
 
 
-#pragma mark - AES编码
+#pragma mark AES编码
 /**
  *  AES解码 + base64解码
  *  一个经过AES编码过的字符串，通过 _privateKey 解码
@@ -93,5 +93,9 @@
  *  return 解码后的NSData
  */
 - (NSData *)AESDecodingWithString:(NSString *)deCodingContent;
+
+
+#pragma mark - zip的编码与解码
+- (NSData *)decodeZipData:(NSData *)zipData;
 
 @end

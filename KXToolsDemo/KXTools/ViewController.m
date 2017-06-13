@@ -35,6 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    
     [self setupNav];
     
     _copyTestLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, ScreenWidth, 30)];
@@ -73,12 +74,20 @@
     [securityCoding setTitle:@"点我调用加解密" forState:UIControlStateNormal];
     [securityCoding setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [securityCoding addTarget:self action:@selector(coding) forControlEvents:UIControlEventTouchUpInside];
-    
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setupNav];
+}
+
 
 
 - (void)setupNav {
     self.title = @"测试";
+    
+    //设置导航栏背景
+    self.navigationController.navigationBar.barTintColor = [UIColor purpleColor];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToNavVc)];
     
@@ -137,13 +146,11 @@
 }
 
 //长按复制
--(BOOL)canBecomeFirstResponder
-{
+-(BOOL)canBecomeFirstResponder {
     return YES;
 }
 
--(BOOL)canPerformAction:(SEL)action withSender:(id)sender
-{
+-(BOOL)canPerformAction:(SEL)action withSender:(id)sender {
     if (action == @selector(menuCopyBtnPressed:)) {
         return YES;
     }

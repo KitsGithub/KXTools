@@ -1,5 +1,5 @@
 //
-//  Test1ViewController.h
+//  BaseViewController.h
 //  KXTools
 //
 //  Created by mac on 2017/6/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Test1ViewController : BaseViewController
+@interface BaseViewController : UIViewController
 
 @end

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '343F2088D4D82D383E6C8BC2EEB3456D'
+               BlueprintIdentifier = '40766C1C9033A911A04CDFE0FDFB8075'
                BlueprintName = 'Pods-KXTools'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-KXTools.a'>

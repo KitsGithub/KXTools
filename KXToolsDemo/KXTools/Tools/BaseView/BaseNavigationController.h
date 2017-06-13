@@ -12,4 +12,6 @@
 
 - (void)setBottomLineViewHiden:(BOOL)isHiden;
 
+
+
 @end
