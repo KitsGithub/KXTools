@@ -12,6 +12,6 @@
 
 - (void)setBottomLineViewHiden:(BOOL)isHiden;
 
-
+- (void)setBottomLineViewColor:(UIColor *)color;
 
 @end

@@ -88,6 +88,10 @@
     self.lineView.hidden = isHiden;
 }
 
+- (void)setBottomLineViewColor:(UIColor *)color {
+    self.lineView.backgroundColor = color;
+}
+
 
 #pragma mark - privated Method
 //记录之前的nav的状态

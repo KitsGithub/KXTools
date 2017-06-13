@@ -96,6 +96,13 @@
 
 
 #pragma mark - zip的编码与解码
+
+/**
+ ZIP解码
+
+ @param zipData zip 编码后的数据
+ @return zip解码后的数据
+ */
 - (NSData *)decodeZipData:(NSData *)zipData;
 
 @end

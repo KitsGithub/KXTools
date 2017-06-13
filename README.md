@@ -4,7 +4,7 @@
 大家多多交流，多多指教，遇到问题可以联系我QQ: 381377046 ，我会尽快优化
 
 #目录
-- 快速创建图片在上,文字在下的按钮
+- BaseNavigationController、BaseViewController的介绍
 - 创建1个带有单位的文本，支持价钱和单位颜色不一样
 - URL的编码与解码
 - 自定义封装的加密工具类
@@ -13,36 +13,44 @@
 
 
 ### 更新日志
+> 2.17 去除UIButton分类，新增UINavigation、UIViewController的基类，实现不同颜色导航栏之间的无缝对接，KXCodingManager 新增zip解压方法
+>
 > 2.16 新增之前封装好的仿微信的弹框提示，actionSheet 和 alertView
 >
 > 2.15 重新整理了ReadMe 和 调整了价格Label的具体实现
 >
 
 
-### 快速创建图片在上,文字在下的按钮
-快速创建的方式
+### BaseNavigationController 基类
 ```objc
-[button setImage:[UIImage imageNamed:@"xxx"] withSize:CGSizeMake(44, 44) andSubTtitle:@"测试按钮" andFont:13 withType:KXCustomButtonVerticalType stata:UIControlStateNormal];
+- (void)setBottomLineViewHiden:(BOOL)isHiden;
+设置导航栏下方线条的是否隐藏
 ```
-其中
+
 ```objc
-typedef enum : NSUInteger {
-KXCustomButtonHorizontalType = 0,  /** 水平样式  */
-KXCustomButtonVerticalType = 1,    /** 垂直样式   */
-} kXCustomButtonType;
+- (void)setBottomLineViewColor:(UIColor *)color;
+设置导航栏底部线条的颜色
 ```
-`
-因而开发者们要注意指定图片的位置
+BaseNavigationController 同时内部实现了statusBar的childViewController
+
+
+### BaseViewController （UIViewController基类）
+在
+```objc
+- (void)viewWillAppear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
+``
+实现了在willAppear里记录上一界面的nav状态，及在willDisappear里恢复上一界面的状态
 
 ### UILabel+price (已更换实现)
 创建1个带有单位的文本,支持价钱和单位颜色不一样
 之前通过runTime 去手动创建2个不一样的label，这种方法太绕了
 所以现在更换了另一种实现方式，去掉了price的Label分类
-通过
+通过去达到之前的目的
 ```objc
 NSMutableAttributedString  //设置文本的动态属性
 ```
-去达到之前的目的
+
 核心代码
 ```objc
 NSString *targetStr = [price stringByAppendingString:unit];
@@ -141,6 +149,31 @@ base64、AES加密的工具类
 */
 - (NSString *)AESDecoding:(NSString *)deCodingContent;
 ```
+
+>>ZIP解码
+```objc
+/**
+ZIP解码
+
+@param zipData zip 编码后的数据
+@return zip解码后的数据
+*/
+- (NSData *)decodeZipData:(NSData *)zipData;
+```
+
+### KXKeyChainManager  二次封装系统KeyChain
+核心方法
+```objc
+保存
++ (void)save:(NSString *)service data:(id)data;
+
+读取
++ (id)load:(NSString *)service;
+
+删除
++ (void)delete:(NSString *)service;
+```
+
 
 ### KXTouchIDManager
 初步封装TouchID 的流程和操作指令
