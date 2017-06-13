@@ -10,8 +10,18 @@
 
 @interface BaseNavigationController : UINavigationController
 
+/**
+ 设置NavBar底部线条是否隐藏
+
+ @param isHiden 是否隐藏
+ */
 - (void)setBottomLineViewHiden:(BOOL)isHiden;
 
+/**
+ 设置NavBar底部线条的颜色
+
+ @param color 颜色
+ */
 - (void)setBottomLineViewColor:(UIColor *)color;
 
 @end

@@ -13,7 +13,7 @@
 
 
 ### 更新日志
-> 2.17 去除UIButton分类，新增UINavigation、UIViewController的基类，实现不同颜色导航栏之间的无缝对接，KXCodingManager 新增zip解压方法
+> 2.17 去除UIButton分类，新增UINavigation、UIViewController的基类，实现不同颜色导航栏之间的无缝对接，KXCodingManager 新增zip解压方法（后台数据采取gzip格式返回）
 >
 > 2.16 新增之前封装好的仿微信的弹框提示，actionSheet 和 alertView
 >
@@ -23,13 +23,21 @@
 
 ### BaseNavigationController 基类
 ```objc
+/**
+设置NavBar底部线条是否隐藏
+
+@param isHiden 是否隐藏
+*/
 - (void)setBottomLineViewHiden:(BOOL)isHiden;
-设置导航栏下方线条的是否隐藏
 ```
 
 ```objc
+/**
+设置NavBar底部线条的颜色
+
+@param color 颜色
+*/
 - (void)setBottomLineViewColor:(UIColor *)color;
-设置导航栏底部线条的颜色
 ```
 BaseNavigationController 同时内部实现了statusBar的childViewController
 
@@ -101,6 +109,7 @@ NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithS
 
 
 ### KXCodingManager
+需要导入libz.tbd
 base64、AES加密的工具类
 使用这个方法进行Manager初始化
 ```objc
@@ -149,7 +158,7 @@ base64、AES加密的工具类
 - (NSString *)AESDecoding:(NSString *)deCodingContent;
 ```
 
->>ZIP解码
+>>ZIP解码 
 ```objc
 /**
 ZIP解码

@@ -30,6 +30,9 @@
     UIBarButtonItem *_previousViewControllerBackButton;
     UIImage *_previousNavigationBarBackgroundImageDefault;
     UIImage *_previousNavigationBarBackgroundImageLandscapePhone;
+    
+    //自定义控件
+    UIButton *_baseCustomBackButton;
 }
 
 - (void)viewDidLoad {
@@ -38,6 +41,15 @@
     
     //设置导航栏背景
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"WhiteImage"] forBarMetrics:UIBarMetricsDefault];
+    
+    //自定义返回按钮
+    _baseCustomBackButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    _baseCustomBackButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [_baseCustomBackButton setImage:[UIImage imageNamed:@"NewCircle_Nav_Back"] forState:UIControlStateNormal];
+    [_baseCustomBackButton addTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:_baseCustomBackButton];
+    self.navigationItem.backBarButtonItem = backItem;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,6 +102,10 @@
 
 - (void)setBottomLineViewColor:(UIColor *)color {
     self.lineView.backgroundColor = color;
+}
+
+- (void)navBackAction {
+    [self popViewControllerAnimated:YES];
 }
 
 
