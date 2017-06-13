@@ -1,9 +1,9 @@
-#KXTools
+## KXTools
 
 自己由于工作需要而封装的一些基本控件
-大家多多交流，多多指教，遇到问题可以联系我QQ: 381377046 ，我会尽快优化
+大家多多交流，多多指教，遇到问题可以联系我QQ: 381377046 ，备注KXTools 我会尽快优化
 
-#目录
+## 目录
 - BaseNavigationController、BaseViewController的介绍
 - 创建1个带有单位的文本，支持价钱和单位颜色不一样
 - URL的编码与解码
@@ -35,11 +35,10 @@ BaseNavigationController 同时内部实现了statusBar的childViewController
 
 
 ### BaseViewController （UIViewController基类）
-在
 ```objc
 - (void)viewWillAppear:(BOOL)animated
 - (void)viewWillDisappear:(BOOL)animated
-``
+```
 实现了在willAppear里记录上一界面的nav状态，及在willDisappear里恢复上一界面的状态
 
 ### UILabel+price (已更换实现)
