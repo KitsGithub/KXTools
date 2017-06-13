@@ -18,8 +18,9 @@
     UILabel *_titleLabel;
 }
 
-- (instancetype)initWithTitle:(NSString *)titleName cancellTitle:(NSString *)cancelTitle andOtherButtonTitles:(NSArray *)titles {
+- (instancetype)initWithTitle:(NSString *)titleName delegate:(id <KXActionSheetDelegate>)delegate cancellTitle:(NSString *)cancelTitle andOtherButtonTitles:(NSArray *)titles {
     if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
+        self.delegate = delegate;
         [self setupView];
         [self setupButtonWithTitleName:titleName andCancellTitle:cancelTitle andOtherButton:titles];
         [[UIApplication sharedApplication].keyWindow addSubview:self];
@@ -111,7 +112,7 @@
 }
 
 //标红字体方法
-- (void)setInportanceTitleAtIndex:(NSUInteger)index {
+- (void)setImportanceTitleAtIndex:(NSUInteger)index {
     for (UIButton *targetButton in _buttonView.subviews) {
         if ([targetButton isKindOfClass:[UIButton class]] && targetButton.tag == index) {
             [targetButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
@@ -120,10 +121,18 @@
     }
 }
 
+
 //设置标题字体
 - (void)setTitleColorWithAttributedStr:(NSMutableAttributedString *)attributedStr {
     _titleLabel.attributedText = attributedStr;
 }
+
+- (void)setTitleColorWithAttributedStrWithBlock:(SetTitleBlock)block {
+    if (block) {
+        block(_titleLabel);
+    }
+}
+
 
 - (void)setSubTitleImageWithIndex:(NSUInteger)index image:(UIImage *)image titleEdgeInsets:(UIEdgeInsets)edgInsets WithAligment:(UIControlContentHorizontalAlignment)aligment {
     for (UIButton *targetButton in _buttonView.subviews) {

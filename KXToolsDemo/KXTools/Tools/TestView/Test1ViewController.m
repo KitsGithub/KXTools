@@ -35,7 +35,6 @@
     //设置导航栏背景
     self.navigationController.navigationBar.barTintColor = [UIColor redColor];
     
-    
 }
 
 - (void)setupNav {

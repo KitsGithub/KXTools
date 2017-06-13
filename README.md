@@ -1,15 +1,16 @@
 ## KXTools
 
-自己由于工作需要而封装的一些基本控件
+自己由于工作需要而封装的一些基本控件＜/br＞
 大家多多交流，多多指教，遇到问题可以联系我QQ: 381377046 ，备注KXTools 我会尽快优化
 
 ## 目录
 - BaseNavigationController、BaseViewController的介绍
-- 创建1个带有单位的文本，支持价钱和单位颜色不一样
+- 模仿微信的ActionSheet 和 带特殊点击事件的AlertView
 - URL的编码与解码
 - 自定义封装的加密工具类
 - 二次封装系统KeyChain方便使用
 - TouchID的自封装
+
 
 
 ### 更新日志
@@ -49,24 +50,118 @@ BaseNavigationController 同时内部实现了statusBar的childViewController
 ```
 实现了在willAppear里记录上一界面的nav状态，及在willDisappear里恢复上一界面的状态
 
-### UILabel+price (已更换实现)
-创建1个带有单位的文本,支持价钱和单位颜色不一样
-之前通过runTime 去手动创建2个不一样的label，这种方法太绕了
-所以现在更换了另一种实现方式，去掉了price的Label分类
-通过去达到之前的目的
+### 自定义的ActionSheet 和 alertView
+样式模仿微信弹框
+
+#### KXActionSheet
+初始化方法，与系统alertView类似
 ```objc
-NSMutableAttributedString  //设置文本的动态属性
+/**
+构造方法
+
+@param titleName   标题
+@param delegate    代理
+@param cancelTitle 取消位置
+@param titles      其他按钮（数组形式）
+*/
+- (instancetype)initWithTitle:(NSString *)titleName
+delegate:(id <KXActionSheetDelegate>)delegate
+cancellTitle:(NSString *)cancelTitle
+andOtherButtonTitles:(NSArray *)titles;
 ```
 
-核心代码
+为了方便，我提供了两个方法设置标题内容＜/br＞
+一个是自定义一个富文本传进去，但是会覆盖之前设置的文本内容
 ```objc
-NSString *targetStr = [price stringByAppendingString:unit];
-//设置价钱的渲染
-NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:targetStr];
-[attStr setAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]} range:[targetStr rangeOfString:price]];
-//设置单位部分的渲染
-[attStr setAttributes:@{NSForegroundColorAttributeName : [UIColor greenColor] , NSFontAttributeName : [UIFont systemFontOfSize:13]} range:[targetStr rangeOfString:unit]];
+/**
+设置标题字体
+
+@param attributedStr 标题富文本
+*/
+- (void)setTitleColorWithAttributedStr:(NSMutableAttributedString *)attributedStr;
 ```
+
+另一个是提供了一个block 把titleLabel传出来了,可以在这里设置标题文本
+```objc
+typedef void(^SetTitleBlock)(UILabel *_titleLabel);
+
+- (void)setTitleColorWithAttributedStrWithBlock:(SetTitleBlock)block;
+```
+
+由于业务关系，经常会重点标注某一行，以显示其重要性＜/br＞
+因此也提供了一个方法用以标红某一行
+```objc
+/**
+标红字体方法
+
+@param index 第几行需要标红
+*/
+- (void)setImportanceTitleAtIndex:(NSUInteger)index;
+```
+
+同样的由于业务的复杂性，我也提供了一个为某一行添加图片的方法
+```objc
+/**
+给某一行设置文字图片
+
+@param index       第几行
+@param image       图片
+@param edgInsets   图片距文字的边距
+@param aligment    按钮的编辑方式
+*/
+- (void)setSubTitleImageWithIndex:(NSUInteger)index
+image:(UIImage *)image
+titleEdgeInsets:(UIEdgeInsets)edgInsets
+WithAligment:(UIControlContentHorizontalAlignment)aligment;
+```
+
+展示方法
+```objc
+/**
+展示动画
+*/
+- (void)show;
+```
+
+#### KXAlertView
+初始化方法与系统alertView类似</br>
+这里使用了MLabel，大家可以去他的github查看用法 https://github.com/molon/MLLabel
+```objc
+/**
+初始化方法
+
+@param title       标题
+@param message     提示
+@param cancel      取消按钮
+@param andSubTitle 另外一个按钮
+
+@return 实例化对象
+*/
+- (instancetype)initWithTitle:(NSString *)title
+andMessage:(NSString *)message
+delegate:(id <KXAlertViewDelegate>)delegate
+andCancelButton:(NSString *)cancel
+andSubTitle:(NSString *)andSubTitle;
+```
+
+```objc
+/**
+设置提示文本中的特殊的点击效果
+
+@param targetStr 目标文本
+*/
+- (void)setSpacialLinkWithTargetStr:(NSString *)targetStr;
+```
+
+展示方法
+```objc
+/**
+展示动画
+*/
+- (void)show;
+```
+
+
 
 ###  NSString+urlCoding
 如题所示， url的编码与解码
@@ -85,13 +180,9 @@ NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithS
 利用以上2个方法就可以进行URL的编码/解码啦
 
 
-### NSString+size
-计算文字长度
-老生常谈了，也不是什么新鲜的东西，不多作说明了
-
 
 ### UINavigationBar+Awesome
-由于NavBar是单例的，因而我常常在碰到需要随时更变导航条的颜色的时候，总是很蛋疼
+由于NavBar是单例的，因而我常常在碰到需要随时更变导航条的颜色的时候，总是很蛋疼＜/br＞
 有时候是因为进场动画、有时候是因为退场动画
 ```objc
 - (void)lt_setBackgroundColor:(UIColor *)backgroundColor;  //更换导航栏的背景颜色
@@ -109,8 +200,8 @@ NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithS
 
 
 ### KXCodingManager
-需要导入libz.tbd
-base64、AES加密的工具类
+需要导入libz.tbd＜/br＞
+base64、AES加密的工具类＜/br＞
 使用这个方法进行Manager初始化
 ```objc
 - (instancetype)initWithSequreKey:(NSString *)privateKey;

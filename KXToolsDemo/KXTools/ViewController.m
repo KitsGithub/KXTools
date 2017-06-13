@@ -16,19 +16,22 @@
 //自定义类
 #import "KXCodingManager.h"
 #import "KXKeyChainManager.h"
+#import "KXActionSheet.h"
+#import "KXAlertView.h"
 
 //TouchID 管理类
 #import "KXTouchIDManager.h"
 
 //FMDB的第三方封装
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDelegate,UITableViewDataSource,KXActionSheetDelegate,KXAlertViewDelegate>
 
 @end
 
 @implementation ViewController {
     LAContext *_context;
     UILabel *_copyTestLabel;
+    UITableView *_tableView;
 }
 
 - (void)viewDidLoad {
@@ -38,70 +41,19 @@
     
     [self setupNav];
     
-    _copyTestLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, ScreenWidth, 30)];
-    _copyTestLabel.text = @"长按复制功能";
-    _copyTestLabel.textAlignment = NSTextAlignmentCenter;
-    _copyTestLabel.userInteractionEnabled = YES;
-    [self.view addSubview:_copyTestLabel];
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(copyLabelDidLongPress:)];
-    [_copyTestLabel addGestureRecognizer:longPress];
+    [self setupView];
     
-    
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, CGRectGetMaxY(_copyTestLabel.frame), 120, 44)];
-    NSString *price = @"20";
-    NSString *unit = @"块";
-    NSString *targetStr = [price stringByAppendingString:unit];
-    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:targetStr];
-    [attStr setAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]} range:[targetStr rangeOfString:price]];
-    [attStr setAttributes:@{NSForegroundColorAttributeName : [UIColor greenColor] , NSFontAttributeName : [UIFont systemFontOfSize:13]} range:[targetStr rangeOfString:unit]];
-    label.attributedText = attStr;
-    [self.view addSubview:label];
-    
-    
-    
-    //3DTouch 功能
-    UIButton *touchID = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(label.frame) + 30, ScreenWidth, 30)];
-    [self.view addSubview:touchID];
-    [touchID setTitle:@"点我调用touchID" forState:UIControlStateNormal];
-    [touchID setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [touchID addTarget:self action:@selector(touchIDClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    //加解密  功能
-    UIButton *securityCoding = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(touchID.frame) + 30, ScreenWidth, 30)];
-    [self.view addSubview:securityCoding];
-    [securityCoding setTitle:@"点我调用加解密" forState:UIControlStateNormal];
-    [securityCoding setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [securityCoding addTarget:self action:@selector(coding) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     [self setupNav];
+    [super viewWillAppear:animated];
 }
 
+#pragma mark - 功能
 
-
-- (void)setupNav {
-    self.title = @"测试";
-    
-    //设置导航栏背景
-    self.navigationController.navigationBar.barTintColor = [UIColor purpleColor];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToNavVc)];
-    
-    
-}
-
-//跳转到一个有导航栏的界面
-- (void)jumpToNavVc {
-    Test1ViewController *VC = [[Test1ViewController alloc] init];
-    [self.navigationController pushViewController:VC animated:YES];
-}
-
-//加解密调用
-- (void)coding {
+//base64加解密
+- (void)Base64Coding {
     KXCodingManager *manager = [[KXCodingManager alloc] initWithSequreKey:@"yihezhai16816888"];
     
     NSString *encodingStr = [manager base64Encoding:@"我爱你"];
@@ -109,7 +61,11 @@
     
     NSString *decodingStr = [manager base64Decoding:encodingStr];
     NSLog(@"base64解码后的内容: %@",decodingStr);
-    
+}
+
+//AES加解密
+- (void)AESCoding {
+    KXCodingManager *manager = [[KXCodingManager alloc] initWithSequreKey:@"yihezhai16816888"];
     
     NSString *AESEncodingStr = [manager AESEncoding:@"我爱你"];
     NSLog(@"AES加密之后的内容: %@",AESEncodingStr);
@@ -117,17 +73,11 @@
     
     NSString *AESDecodingStr = [manager AESDecoding:AESEncodingStr];
     NSLog(@"AES解密之后的内容: %@",AESDecodingStr);
+}
+
+//保存至 系统钥匙串中
+- (void)SaveToKeyChain {
     
-    //如果私钥不一样，则会创建1个新的manger对象，请注意使用，
-    // initWithSequreKey 只会取出第一次创建的对象，
-    // 这个问题待修复
-    KXCodingManager *manager2 = [[KXCodingManager alloc] initWithSequreKey:@"123123"];
-    NSLog(@"%@",manager.SequreKey);
-    NSLog(@"%@",manager2.SequreKey);
-    
-    
-    
-    //保存至 系统钥匙串中
     [KXKeyChainManager save:@"Account" data:@"381377046@qq.com"];
     [KXKeyChainManager save:@"Password" data:@"123123"];
     
@@ -142,8 +92,9 @@
     
     NSMutableDictionary *accountInfo = [KXKeyChainManager load:@"AccountInfo"];
     NSLog(@"%@",accountInfo);
-
 }
+
+
 
 //长按复制
 -(BOOL)canBecomeFirstResponder {
@@ -191,6 +142,134 @@
         }];
     }
 }
+
+//actionSheet
+- (void)showActioSheet {
+    KXActionSheet *sheet = [[KXActionSheet alloc] initWithTitle:@"标题" delegate:self cancellTitle:@"取消" andOtherButtonTitles:@[@"其他1",@"其他2",@"其他3"]];
+    [sheet setImportanceTitleAtIndex:1];
+    [sheet setSubTitleImageWithIndex:2 image:[UIImage imageNamed:@"textIcon_00"] titleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 12) WithAligment:UIControlContentHorizontalAlignmentCenter];
+    
+    NSString *price = @"20";
+    NSString *unit = @"块";
+    NSString *targetStr = [price stringByAppendingString:unit];
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:targetStr];
+    [attStr setAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]} range:[targetStr rangeOfString:price]];
+    [attStr setAttributes:@{NSForegroundColorAttributeName : [UIColor greenColor] , NSFontAttributeName : [UIFont systemFontOfSize:13]} range:[targetStr rangeOfString:unit]];
+    [sheet setTitleColorWithAttributedStr:attStr];
+    [sheet show];
+}
+
+
+- (void)KXActionSheet:(KXActionSheet *)sheet andIndex:(NSInteger)index {
+    NSLog(@"%zd",index);
+}
+
+- (void)KXActionSheetDidDisappear:(KXActionSheet *)sheet {
+    NSLog(@"消失了");
+}
+
+// 自定义alertView
+- (void)showAlertView {
+    KXAlertView *alertView = [[KXAlertView alloc] initWithTitle:@"标题" andMessage:@"我是副标题我是副标题我是副标题我是副标题我是副标题_特殊文本" delegate:self andCancelButton:@"取消" andSubTitle:@"确定"];
+    [alertView setSpacialLinkWithTargetStr:@"特殊文本"];
+    [alertView show];
+}
+
+- (void)KXAlertView:(KXAlertView *)alertView ClickIndex:(NSUInteger)index {
+    NSLog(@"%zd",index);
+}
+
+- (void)KXAlertView:(KXAlertView *)alertView ClickSpacialLinkWithLinkValue:(NSString *)linkValue {
+    NSLog(@"%@",linkValue);
+}
+
+#pragma mark - UI布局
+- (void)setupNav {
+    self.title = @"测试";
+    
+    //设置导航栏背景
+    self.navigationController.navigationBar.barTintColor = [UIColor purpleColor];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToNavVc)];
+}
+
+- (void)setupView {
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [self.view addSubview:_tableView];
+    
+    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"demoId"];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"demoId" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"长按复制功能";
+        _copyTestLabel = cell.textLabel;
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(copyLabelDidLongPress:)];
+        [cell addGestureRecognizer:longPress];
+    } else if (indexPath.row == 1) {
+        
+        NSString *price = @"20";
+        NSString *unit = @"块";
+        NSString *targetStr = [price stringByAppendingString:unit];
+        NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:targetStr];
+        [attStr setAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]} range:[targetStr rangeOfString:price]];
+        [attStr setAttributes:@{NSForegroundColorAttributeName : [UIColor greenColor] , NSFontAttributeName : [UIFont systemFontOfSize:13]} range:[targetStr rangeOfString:unit]];
+        cell.textLabel.attributedText = attStr;
+    } else if (indexPath.row == 2) {
+        cell.textLabel.text = @"base64加解密";
+    } else if (indexPath.row == 3) {
+        cell.textLabel.text = @"AES加解密";
+    } else if (indexPath.row == 4) {
+        cell.textLabel.text = @"keyChain二次封装";
+    } else if (indexPath.row == 5) {
+        cell.textLabel.text = @"调用TouchID";
+    } else if (indexPath.row == 6) {
+        cell.textLabel.text = @"调用actionSheet";
+    } else if (indexPath.row == 7) {
+        cell.textLabel.text = @"调用alertView";
+    }
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        
+    } else if (indexPath.row == 1) {
+        
+    } else if (indexPath.row == 2) {
+        [self Base64Coding];
+    } else if (indexPath.row == 3) {
+        [self AESCoding];
+    } else if (indexPath.row == 4) {
+        [self SaveToKeyChain];
+    } else if (indexPath.row == 5) {
+        [self touchIDClick];
+    } else if (indexPath.row == 6) {
+        [self showActioSheet];
+    } else if (indexPath.row == 7) {
+        [self showAlertView];
+    }
+}
+
+//跳转到一个有导航栏的界面
+- (void)jumpToNavVc {
+    Test1ViewController *VC = [[Test1ViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
 
 
 

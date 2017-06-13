@@ -13,40 +13,33 @@
 
 #import <zlib.h>
 
+static KXCodingManager *manager = nil;
+static dispatch_once_t onceToken;
+
+@interface KXCodingManager ()
+
+@end
+
+
 @implementation KXCodingManager
 
-+ (instancetype)shareInstance {
-    return [[self alloc] initWithSequreKey:@""];
++ (instancetype)shareInstanceWithSequreKey:(NSString *)sequreKey {
+    return [[self alloc] initWithSequreKey:sequreKey];
 }
+
 //创建1个单例对象
 - (instancetype)initWithSequreKey:(NSString *)privateKey {
-    static KXCodingManager *manager = nil;
-    static dispatch_once_t onceToken;
+    
+    //创建单例对象
     dispatch_once(&onceToken, ^{
         manager = [[KXCodingManager alloc] init];
-        manager.SequreKey = privateKey;
     });
     
-    
-    if (![manager.SequreKey isEqualToString:privateKey]) {
-        //如果创建的私钥不一样，则创建1个新的对象
-        KXCodingManager *manager2 = [[KXCodingManager alloc] init];
-        manager2.SequreKey = privateKey;
-        return manager2;
-    }
+    manager.SequreKey = privateKey;
     
     return manager;
 }
 
-
-
-//预留一个创建入口，便于创建不同私钥的对象
-- (instancetype)init {
-    if (self = [super init]) {
-        
-    }
-    return self;
-}
 
 //set方法
 - (void)setSequreKey:(NSString *)SequreKey {
@@ -232,4 +225,7 @@
     }
     else return nil;
 }
+
+
+
 @end

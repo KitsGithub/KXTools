@@ -28,8 +28,9 @@ static NSUInteger alertViewWidth = 0;
     UIView *_titleLineView;
 }
 
-- (instancetype)initWithTitle:(NSString *)title andMessage:(NSString *)message andCancelButton:(NSString *)cancel andSubTitle:(NSString *)andSubTitle {
+- (instancetype)initWithTitle:(NSString *)title andMessage:(NSString *)message delegate:(id <KXAlertViewDelegate>)delegate andCancelButton:(NSString *)cancel andSubTitle:(NSString *)andSubTitle {
     if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
+        self.delegate = delegate;
         [self setupView];
         [self setupAlertViewWithTitle:title andMessage:message andCancelButton:cancel andSubTitle:andSubTitle];
         [[UIApplication sharedApplication].keyWindow addSubview:self];
@@ -205,7 +206,6 @@ static NSUInteger alertViewWidth = 0;
         [_cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_cancelButton addTarget:self action:@selector(cancelButtonDidClick:) forControlEvents:UIControlEventTouchUpInside];
         
-        NSLog(@"%lf",ScreenWidth);
         if (ScreenWidth >= 375) {
             _cancelButton.titleLabel.font = [UIFont systemFontOfSize:15];
         } else {

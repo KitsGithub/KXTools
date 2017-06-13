@@ -12,7 +12,7 @@
 
 @property (nonatomic, copy,readonly) NSString *SequreKey;
 
-+ (instancetype)shareInstance;
++ (instancetype)shareInstanceWithSequreKey:(NSString *)sequreKey;
 //创建1个单例对象
 - (instancetype)initWithSequreKey:(NSString *)privateKey;
 

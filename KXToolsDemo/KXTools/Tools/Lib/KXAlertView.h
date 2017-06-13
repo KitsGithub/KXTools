@@ -42,7 +42,11 @@
 
  @return 实例化对象
  */
-- (instancetype)initWithTitle:(NSString *)title andMessage:(NSString *)message andCancelButton:(NSString *)cancel andSubTitle:(NSString *)andSubTitle;
+- (instancetype)initWithTitle:(NSString *)title
+                   andMessage:(NSString *)message
+                     delegate:(id <KXAlertViewDelegate>)delegate
+              andCancelButton:(NSString *)cancel
+                  andSubTitle:(NSString *)andSubTitle;
 
 
 /**

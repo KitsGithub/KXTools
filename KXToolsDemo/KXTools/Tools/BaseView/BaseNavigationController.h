@@ -24,4 +24,6 @@
  */
 - (void)setBottomLineViewColor:(UIColor *)color;
 
+- (void)setCustomBackItem;
+
 @end
