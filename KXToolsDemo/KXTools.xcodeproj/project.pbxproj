@@ -146,7 +146,7 @@
 			name = DemoModel;
 			sourceTree = "<group>";
 		};
-		0401E2331E557C4300D2A4CD /* categray */ = {
+		0401E2331E557C4300D2A4CD /* categray(用到的分类) */ = {
 			isa = PBXGroup;
 			children = (
 				04434DEB1EEE874300C2CE2D /* UIColor+My.h */,
@@ -158,23 +158,22 @@
 				0401E23A1E557C4300D2A4CD /* UINavigationBar+Awesome.h */,
 				0401E23B1E557C4300D2A4CD /* UINavigationBar+Awesome.m */,
 			);
+			name = "categray(用到的分类)";
 			path = categray;
 			sourceTree = "<group>";
 		};
-		0401E23C1E557C4300D2A4CD /* Lib */ = {
+		0401E23C1E557C4300D2A4CD /* Lib(自己的库) */ = {
 			isa = PBXGroup;
 			children = (
-				0401E23F1E557C4300D2A4CD /* KXActionSheet.h */,
-				0401E2401E557C4300D2A4CD /* KXActionSheet.m */,
-				0401E2411E557C4300D2A4CD /* KXAlertView.h */,
-				0401E2421E557C4300D2A4CD /* KXAlertView.m */,
-				0401E2451E557C4300D2A4CD /* KXTouchIDManager.h */,
-				0401E2461E557C4300D2A4CD /* KXTouchIDManager.m */,
+				04434F171EF1173100C2CE2D /* KXActionSheet */,
+				04434F181EF1174300C2CE2D /* KXAlertView */,
+				04434F191EF1174A00C2CE2D /* KXTouchIDManager */,
 			);
+			name = "Lib(自己的库)";
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		0401E2471E557C4300D2A4CD /* Security */ = {
+		0401E2471E557C4300D2A4CD /* Security(加解密) */ = {
 			isa = PBXGroup;
 			children = (
 				0401E2481E557C4300D2A4CD /* Categray */,
@@ -183,6 +182,7 @@
 				0401E2531E557C4300D2A4CD /* KXKeyChainManager.h */,
 				0401E2541E557C4300D2A4CD /* KXKeyChainManager.m */,
 			);
+			name = "Security(加解密)";
 			path = Security;
 			sourceTree = "<group>";
 		};
@@ -208,11 +208,12 @@
 			path = GTMBase64;
 			sourceTree = "<group>";
 		};
-		04434DC11EEE86F500C2CE2D /* TheThirdPart */ = {
+		04434DC11EEE86F500C2CE2D /* TheThirdPart(用到的第三方) */ = {
 			isa = PBXGroup;
 			children = (
 				04434DC21EEE86F500C2CE2D /* MLLabel */,
 			);
+			name = "TheThirdPart(用到的第三方)";
 			path = TheThirdPart;
 			sourceTree = "<group>";
 		};
@@ -278,7 +279,7 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		04434DEE1EEE8D9600C2CE2D /* BaseView */ = {
+		04434DEE1EEE8D9600C2CE2D /* BaseView(自己封装的基类) */ = {
 			isa = PBXGroup;
 			children = (
 				04434DEF1EEE8DB800C2CE2D /* BaseNavigationController.h */,
@@ -286,6 +287,7 @@
 				04434E001EEE9B9E00C2CE2D /* BaseViewController.h */,
 				04434E011EEE9B9E00C2CE2D /* BaseViewController.m */,
 			);
+			name = "BaseView(自己封装的基类)";
 			path = BaseView;
 			sourceTree = "<group>";
 		};
@@ -301,6 +303,33 @@
 			);
 			name = TestView;
 			path = Tools/TestView;
+			sourceTree = "<group>";
+		};
+		04434F171EF1173100C2CE2D /* KXActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				0401E23F1E557C4300D2A4CD /* KXActionSheet.h */,
+				0401E2401E557C4300D2A4CD /* KXActionSheet.m */,
+			);
+			name = KXActionSheet;
+			sourceTree = "<group>";
+		};
+		04434F181EF1174300C2CE2D /* KXAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				0401E2411E557C4300D2A4CD /* KXAlertView.h */,
+				0401E2421E557C4300D2A4CD /* KXAlertView.m */,
+			);
+			name = KXAlertView;
+			sourceTree = "<group>";
+		};
+		04434F191EF1174A00C2CE2D /* KXTouchIDManager */ = {
+			isa = PBXGroup;
+			children = (
+				0401E2451E557C4300D2A4CD /* KXTouchIDManager.h */,
+				0401E2461E557C4300D2A4CD /* KXTouchIDManager.m */,
+			);
+			name = KXTouchIDManager;
 			sourceTree = "<group>";
 		};
 		049196A31DFA9D0F00208E89 /* Frameworks */ = {
@@ -372,11 +401,11 @@
 		473059171CC9BAB300BA2E02 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				04434DEE1EEE8D9600C2CE2D /* BaseView */,
-				04434DC11EEE86F500C2CE2D /* TheThirdPart */,
-				0401E2331E557C4300D2A4CD /* categray */,
-				0401E23C1E557C4300D2A4CD /* Lib */,
-				0401E2471E557C4300D2A4CD /* Security */,
+				04434DEE1EEE8D9600C2CE2D /* BaseView(自己封装的基类) */,
+				04434DC11EEE86F500C2CE2D /* TheThirdPart(用到的第三方) */,
+				0401E2331E557C4300D2A4CD /* categray(用到的分类) */,
+				0401E23C1E557C4300D2A4CD /* Lib(自己的库) */,
+				0401E2471E557C4300D2A4CD /* Security(加解密) */,
 			);
 			path = Tools;
 			sourceTree = "<group>";

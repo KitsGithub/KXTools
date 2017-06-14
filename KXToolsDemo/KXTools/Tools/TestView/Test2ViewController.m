@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self setupNav];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
@@ -33,26 +33,23 @@
 }
 
 - (void)setupNav {
-    BaseNavigationController *baseNav = (BaseNavigationController *)self.navigationController;
-    [baseNav setBottomLineViewHiden:YES];
     
-    
+    //设置导航栏背景
+    self.navigationController.navigationBar.barTintColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [super setCustomBackItemWihtCustomImage:[UIImage imageNamed:@"NewCircle_Nav_Back"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    //设置导航栏背景
-    self.navigationController.navigationBar.barTintColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
-    
-    
+    [self setupNav];
 }
-
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
+
 
 
 - (void)buttonDidClick {

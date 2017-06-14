@@ -42,6 +42,9 @@
     self.title = @"测试1";
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToNavVc)];
+    
+    [super setCustomBackItemWihtCustomImage:[UIImage imageNamed:@"NewCircle_Nav_Back"]];
+    
 }
 
 - (void)setupView {
@@ -50,6 +53,11 @@
     [self.view addSubview:button];
     [button addTarget:self action:@selector(buttonDidClick) forControlEvents:UIControlEventTouchUpInside];
 }
+
+- (void)navSideslipAction {
+    NSLog(@"打印");
+}
+
 
 
 #pragma mark - privited Mothod

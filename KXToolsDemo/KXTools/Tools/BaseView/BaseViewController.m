@@ -9,6 +9,10 @@
 #import "BaseViewController.h"
 
 @interface BaseViewController ()
+<
+UIGestureRecognizerDelegate     //侧滑代理
+>
+
 
 @end
 
@@ -26,6 +30,10 @@
     UIBarButtonItem *_previousViewControllerBackButton;
     UIImage *_previousNavigationBarBackgroundImageDefault;
     UIImage *_previousNavigationBarBackgroundImageLandscapePhone;
+    
+    //自定义控件
+    UIButton *_baseCustomBackButton;
+    NavSideslipBlock _block;
 }
 
 - (void)viewDidLoad {
@@ -75,6 +83,34 @@
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     
     [[UIApplication sharedApplication] setStatusBarStyle:_previousStatusBarStyle animated:animated];
+    
+    if (![[self.navigationController viewControllers] containsObject: self]) {
+        if ([self respondsToSelector:@selector(navSideslipAction)]) {
+            [self navSideslipAction];
+        }
+    }
+}
+
+
+#pragma mark - open Method
+- (void)setCustomBackItemWihtCustomImage:(UIImage *)image; {
+    //自定义返回按钮
+    _baseCustomBackButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    _baseCustomBackButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [_baseCustomBackButton setImage:image forState:UIControlStateNormal];
+    [_baseCustomBackButton addTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:_baseCustomBackButton];
+    self.navigationItem.leftBarButtonItem = backItem;
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+}
+
+
+- (void)navBackAction {
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 
@@ -137,5 +173,7 @@
         [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsCompact];
     }
 }
+
+
 
 @end

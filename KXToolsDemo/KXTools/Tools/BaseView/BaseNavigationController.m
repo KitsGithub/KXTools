@@ -15,33 +15,11 @@
 
 @end
 
-@implementation BaseNavigationController {
-    BOOL _statusBarShouldBeHidden;
-    BOOL _didSavePreviousStateOfNavBar;
-    BOOL _viewIsActive;
-    BOOL _viewHasAppearedInitially;
-    // Appearance
-    BOOL _previousNavBarHidden;
-    BOOL _previousNavBarTranslucent;
-    UIBarStyle _previousNavBarStyle;
-    UIStatusBarStyle _previousStatusBarStyle;
-    UIColor *_previousNavBarTintColor;
-    UIColor *_previousNavBarBarTintColor;
-    UIBarButtonItem *_previousViewControllerBackButton;
-    UIImage *_previousNavigationBarBackgroundImageDefault;
-    UIImage *_previousNavigationBarBackgroundImageLandscapePhone;
-    
-    //自定义控件
-    UIButton *_baseCustomBackButton;
-}
+@implementation BaseNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    //设置导航栏背景
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"WhiteImage"] forBarMetrics:UIBarMetricsDefault];
-    
     
     
 }
@@ -49,41 +27,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    _previousStatusBarStyle = [[UIApplication sharedApplication] statusBarStyle];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:animated];
-    
-    // Navigation bar appearance
-    if (!_viewIsActive && [self.navigationController.viewControllers objectAtIndex:0] != self) {
-        [self storePreviousNavBarAppearance];
-    }
-    
-    // Initial appearance
-    if (!_viewHasAppearedInitially) {
-        _viewHasAppearedInitially = YES;
-    }
-    
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    
-    if ([self.navigationController.viewControllers objectAtIndex:0] != self &&
-        ![self.navigationController.viewControllers containsObject:self]) {
-        
-        _viewIsActive = NO;
-        [self restorePreviousNavBarAppearance:animated];
-    }
-    
-    [self.navigationController.navigationBar.layer removeAllAnimations];
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:_previousStatusBarStyle animated:animated];
 }
 
 
@@ -98,69 +41,10 @@
     self.lineView.backgroundColor = color;
 }
 
-- (void)setCustomBackItem {
-    //自定义返回按钮
-    _baseCustomBackButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    _baseCustomBackButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    [_baseCustomBackButton setImage:[UIImage imageNamed:@"NewCircle_Nav_Back"] forState:UIControlStateNormal];
-    [_baseCustomBackButton addTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:_baseCustomBackButton];
-    self.navigationItem.leftBarButtonItem = backItem;
-}
 
-
-- (void)navBackAction {
-    [self popViewControllerAnimated:YES];
-}
 
 
 #pragma mark - privated Method
-//记录之前的nav的状态
-- (void)storePreviousNavBarAppearance {
-    _didSavePreviousStateOfNavBar = YES;
-    if ([UINavigationBar instancesRespondToSelector:@selector(barTintColor)]) {
-        _previousNavBarBarTintColor = self.navigationController.navigationBar.barTintColor;
-    }
-    _previousNavBarTranslucent = self.navigationController.navigationBar.translucent;
-    _previousNavBarTintColor = self.navigationController.navigationBar.tintColor;
-    _previousNavBarHidden = self.navigationController.navigationBarHidden;
-    _previousNavBarStyle = self.navigationController.navigationBar.barStyle;
-    if ([[UINavigationBar class] respondsToSelector:@selector(appearance)]) {
-        _previousNavigationBarBackgroundImageDefault = [self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault];
-        _previousNavigationBarBackgroundImageLandscapePhone = [self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsCompact];
-    }
-}
-
-//恢复之前nav的状态
-- (void)restorePreviousNavBarAppearance:(BOOL)animated {
-    if (_didSavePreviousStateOfNavBar) {
-        [self.navigationController setNavigationBarHidden:_previousNavBarHidden animated:animated];
-        UINavigationBar *navBar = self.navigationController.navigationBar;
-        navBar.tintColor = _previousNavBarTintColor;
-        navBar.translucent = _previousNavBarTranslucent;
-        if ([UINavigationBar instancesRespondToSelector:@selector(barTintColor)]) {
-            navBar.barTintColor = _previousNavBarBarTintColor;
-        }
-        navBar.barStyle = _previousNavBarStyle;
-        if ([[UINavigationBar class] respondsToSelector:@selector(appearance)]) {
-            [navBar setBackgroundImage:_previousNavigationBarBackgroundImageDefault forBarMetrics:UIBarMetricsDefault];
-            [navBar setBackgroundImage:_previousNavigationBarBackgroundImageLandscapePhone forBarMetrics:UIBarMetricsCompact];
-        }
-        // Restore back button if we need to
-        if (_previousViewControllerBackButton) {
-            UIViewController *previousViewController = [self.navigationController topViewController]; // We've disappeared so previous is now top
-            previousViewController.navigationItem.backBarButtonItem = _previousViewControllerBackButton;
-            _previousViewControllerBackButton = nil;
-        }
-    }
-}
-
-
-
-
-
-
-
 //把StatusBar的设置 响应给顶层控制器
 - (UIViewController *)childViewControllerForStatusBarStyle{
     return self.topViewController;
@@ -178,12 +62,11 @@
         if (imageView) {
             return imageView;
         }
-        
     }
-    
     return nil;
-    
 }
+
+
 
 #pragma mark - lazyLoad
 - (UIView *)lineView {
@@ -197,6 +80,14 @@
         [self.navigationBar addSubview:_lineView];
     }
     return _lineView;
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    //如果是根控制器，则禁用
+    if (self.childViewControllers.count == 1) {
+        return NO;
+    }
+    return YES;
 }
 
 @end

@@ -48,11 +48,28 @@ BaseNavigationController 同时内部实现了statusBar的childViewController
 
 
 ### BaseViewController （UIViewController基类）
+实现了在willAppear里记录上一界面的nav状态，及在willDisappear里恢复上一界面的状态
 ```objc
 - (void)viewWillAppear:(BOOL)animated
 - (void)viewWillDisappear:(BOOL)animated
 ```
-实现了在willAppear里记录上一界面的nav状态，及在willDisappear里恢复上一界面的状态
+同时提供了一个自定义导航栏返回按钮图片的方法，同时解决了由于设置了```LeftBarItem```导致侧滑失效的问题。
+```objc
+/**
+自定义返回按钮
+
+@param image 返回按钮的图片
+*/
+- (void)setCustomBackItemWihtCustomImage:(UIImage *)image;
+```
+由于业务的逻辑性，提供了一个侧滑时，触发的方法。当侧滑触发的时候，该方法就会被调用
+```objc
+/**
+当用户在侧滑的时候就会触发的方法
+*/
+- (void)navSideslipAction;
+```
+
 
 ### 自定义的ActionSheet 和 alertView
 样式模仿微信弹框
@@ -71,8 +88,7 @@ BaseNavigationController 同时内部实现了statusBar的childViewController
 - (instancetype)initWithTitle:(NSString *)titleName delegate:(id <KXActionSheetDelegate>)delegate cancellTitle:(NSString *)cancelTitle andOtherButtonTitles:(NSArray *)titles;
 ```
 
-为了方便，我提供了两个方法设置标题内容<br/>
-一个是自定义一个富文本传进去，但是会覆盖之前设置的文本内容
+为了方便，我提供了两个方法设置标题内容。一个是自定义一个富文本传进去，但是会覆盖之前设置的文本内容
 ```objc
 /**
 设置标题字体
@@ -82,15 +98,14 @@ BaseNavigationController 同时内部实现了statusBar的childViewController
 - (void)setTitleColorWithAttributedStr:(NSMutableAttributedString *)attributedStr;
 ```
 
-另一个是提供了一个block 把titleLabel传出来了,可以在这里设置标题文本
+另一个是提供了一个block 把```TitleLabel```传出来了,可以在这里设置标题文本
 ```objc
 typedef void(^SetTitleBlock)(UILabel *_titleLabel);
 
 - (void)setTitleColorWithAttributedStrWithBlock:(SetTitleBlock)block;
 ```
 
-由于业务关系，经常会重点标注某一行，以显示其重要性<br/>
-因此也提供了一个方法用以标红某一行
+由于业务关系，经常会重点标注某一行，以显示其重要性。因此也提供了一个方法用以标红某一行
 ```objc
 /**
 标红字体方法
@@ -122,7 +137,7 @@ typedef void(^SetTitleBlock)(UILabel *_titleLabel);
 ```
 
 #### KXAlertView
-初始化方法与系统alertView类似</br>
+初始化方法与系统AlertView类似</br>
 这里使用了MLabel，大家可以去他的github查看用法 https://github.com/molon/MLLabel
 ```objc
 /**
@@ -174,17 +189,6 @@ typedef void(^SetTitleBlock)(UILabel *_titleLabel);
 利用以上2个方法就可以进行URL的编码/解码啦
 
 
-
-### UINavigationBar+Awesome
-由于NavBar是单例的，因而我常常在碰到需要随时更变导航条的颜色的时候，总是很蛋疼<br/>
-有时候是因为进场动画、有时候是因为退场动画
-```objc
-- (void)lt_setBackgroundColor:(UIColor *)backgroundColor;  //更换导航栏的背景颜色
-```
-我们在退场的时候需要调用，让导航条重置为之前的状态
-```objc
-- (void)lt_reset; 
-```
 ### FMDBManager
 ```objc
 未完成 

@@ -38,16 +38,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
-    [self setupNav];
-    
     [self setupView];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self setupNav];
     [super viewWillAppear:animated];
+    [self setupNav];
 }
 
 #pragma mark - 功能
@@ -122,8 +119,7 @@
     }
 }
 
--(void)menuCopyBtnPressed:(UIMenuItem *)menuItem
-{
+-(void)menuCopyBtnPressed:(UIMenuItem *)menuItem {
     [UIPasteboard generalPasteboard].string = _copyTestLabel.text;
 }
 
@@ -161,11 +157,11 @@
 
 
 - (void)KXActionSheet:(KXActionSheet *)sheet andIndex:(NSInteger)index {
-    NSLog(@"%zd",index);
+    NSLog(@"ActionSheet - %zd",index);
 }
 
 - (void)KXActionSheetDidDisappear:(KXActionSheet *)sheet {
-    NSLog(@"消失了");
+    NSLog(@"ActionSheet消失了");
 }
 
 // 自定义alertView
@@ -176,11 +172,11 @@
 }
 
 - (void)KXAlertView:(KXAlertView *)alertView ClickIndex:(NSUInteger)index {
-    NSLog(@"%zd",index);
+    NSLog(@"AlertView - %zd",index);
 }
 
 - (void)KXAlertView:(KXAlertView *)alertView ClickSpacialLinkWithLinkValue:(NSString *)linkValue {
-    NSLog(@"%@",linkValue);
+    NSLog(@"AlertView - %@",linkValue);
 }
 
 #pragma mark - UI布局
@@ -191,6 +187,9 @@
     self.navigationController.navigationBar.barTintColor = [UIColor purpleColor];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToNavVc)];
+    
+    BaseNavigationController *baseNav = (BaseNavigationController *)self.navigationController;
+    [baseNav setBottomLineViewHiden:YES];
 }
 
 - (void)setupView {
