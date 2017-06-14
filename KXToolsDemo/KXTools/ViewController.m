@@ -185,7 +185,7 @@
 
 #pragma mark - UI布局
 - (void)setupNav {
-    self.title = @"测试";
+    self.title = @"功能列表";
     
     //设置导航栏背景
     self.navigationController.navigationBar.barTintColor = [UIColor purpleColor];
