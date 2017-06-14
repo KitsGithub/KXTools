@@ -3,6 +3,10 @@
 自己由于工作需要而封装的一些基本控件<br/>
 大家多多交流，多多指教，遇到问题可以联系我QQ: 381377046 ，备注KXTools 我会尽快优化
 
+## DEMO
+![image](https://github.com/KitsGithub/KXTools/blob/master/Screenshots/KXToolsScreenShot.gif)
+
+
 ## 目录
 - BaseNavigationController、BaseViewController的介绍
 - 模仿微信的ActionSheet 和 带特殊点击事件的AlertView
