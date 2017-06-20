@@ -1,3 +1,19 @@
-PODFILE CHECKSUM: 5b49cd6bd4e7fed819d97bc3331c48ed50a4257b
+PODS:
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - FMDB
+  - YYKit
+
+SPEC CHECKSUMS:
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: f3d5cb1bd2af80a81c7ae4b11bece71ea8304340
 
 COCOAPODS: 1.2.0

@@ -9,12 +9,16 @@
 #import "Test1ViewController.h"
 
 #import "Test2ViewController.h"
+#import <UIImage+YYAdd.h>
 
-@interface Test1ViewController ()
+
+@interface Test1ViewController () <UITableViewDelegate,UITableViewDataSource>
 
 @end
 
-@implementation Test1ViewController
+@implementation Test1ViewController {
+    CGFloat alpha;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,9 +36,19 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.tintColor = [UIColor yellowColor];
-    //设置导航栏背景
-    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
     
+    
+    //设置导航栏背景
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+    if (alpha > 0) {
+        self.navigationController.navigationBar.alpha = alpha;
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.alpha = 1;
 }
 
 - (void)setupNav {
@@ -45,6 +59,8 @@
     
     [super setCustomBackItemWihtCustomImage:[UIImage imageNamed:@"NewCircle_Nav_Back"]];
     
+    
+    
 }
 
 - (void)setupView {
@@ -52,11 +68,64 @@
     button.backgroundColor = [UIColor redColor];
     [self.view addSubview:button];
     [button addTarget:self action:@selector(buttonDidClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:tableView];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"123"];
+    
+    
 }
+
+
 
 - (void)navSideslipAction {
     NSLog(@"打印");
 }
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 100;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"123" forIndexPath:indexPath];
+    cell.textLabel.text = @"demo";
+    return cell;
+}
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    CGFloat offsetY = scrollView.contentOffset.y;
+    
+    //下拉放大
+    if (offsetY == 0) {
+        self.navigationController.navigationBar.alpha = 1;
+        return;
+    }
+    
+    
+    
+    //导航栏颜色变换
+    if (offsetY > 0) {
+        if (offsetY > 0 && offsetY < 200) {
+            alpha = 1 - (offsetY  / 200.0);
+            self.navigationController.navigationBar.alpha = alpha;
+        } else {
+            self.navigationController.navigationBar.alpha = 0;
+        }
+    }
+    
+}
+
 
 
 

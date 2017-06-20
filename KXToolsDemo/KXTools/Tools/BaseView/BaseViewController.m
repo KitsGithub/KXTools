@@ -77,8 +77,6 @@ UIGestureRecognizerDelegate     //侧滑代理
         [self restorePreviousNavBarAppearance:animated];
     }
     
-    [self setNavBarAppearance:YES];
-    
     [self.navigationController.navigationBar.layer removeAllAnimations];
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     
@@ -157,7 +155,7 @@ UIGestureRecognizerDelegate     //侧滑代理
     }
 }
 
-//设置导航栏
+//导航栏初始化
 - (void)setNavBarAppearance:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     UINavigationBar *navBar = self.navigationController.navigationBar;
